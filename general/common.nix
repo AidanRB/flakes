@@ -18,6 +18,7 @@
     flake = "github:aidanrb/flakes";
     flags = [
       "--no-write-lock-file"
+      "--impure"
       "--option"
       "tarball-ttl"
       "0"
