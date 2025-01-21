@@ -25,6 +25,12 @@
   system.autoUpgrade = {
     enable = true;
     flake = "github:aidanrb/flakes";
+    flags = [
+      "--no-write-lock-file"
+      "--option"
+      "tarball-ttl"
+      "0"
+    ];
   };
 
   # Use the systemd-boot EFI boot loader.
