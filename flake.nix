@@ -1,7 +1,8 @@
 {
-  description = "A very basic flake";
+  description = "Configuration for some NixOS computers";
 
   inputs = {
+    # Add nixpkgs unstable as the default source for packages
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
   };
 
@@ -10,7 +11,7 @@
     nixosConfigurations.F09N0F3 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./configuration.nix
+        ./F09N0F3/configuration.nix
       ];
     };
   };
