@@ -18,6 +18,16 @@
           ./general/common.nix
         ];
       };
+
+      BHZ8VC3 = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hardware/BHZ8VC3/configuration.nix
+          ./desktops/gnome.nix
+          ./users/reuben.nix
+          ./general/common.nix
+        ];
+      };
     };
   };
 }
