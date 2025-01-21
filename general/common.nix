@@ -1,15 +1,6 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
 { config, lib, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
-
   # Enable flakes, set up automatic updates from GitHub, storage optimization
   nix = {
     settings = {
@@ -33,48 +24,13 @@
     ];
   };
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader = {
-    timeout = 0;
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
-  };
-
-  networking.hostName = "F09N0F3"; # Define your hostname.
-
   # Set your time zone.
   time.timeZone = "America/New_York";
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.aidan = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      # games
-      prismlauncher
-      gamehub
-
-      brave
-      discord
-      vscode
-    ];
-    shell = pkgs.fish;
-  };
-
   nixpkgs.config.allowUnfree = true;
-
-  programs.fish.enable = true;
-  programs.steam.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search nixpkgs [term]
@@ -82,17 +38,6 @@
     micro
     git
   ];
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
