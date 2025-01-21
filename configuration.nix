@@ -70,7 +70,7 @@
     packages = with pkgs; [
       brave
       discord
-      vscodium
+      vscode
     ];
     shell = pkgs.fish;
   };
