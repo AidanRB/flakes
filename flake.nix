@@ -12,7 +12,7 @@
       F09N0F3 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./F09N0F3/configuration.nix
+          ./hardware/F09N0F3/configuration.nix
           ./desktops/gnome.nix
           ./users/aidan.nix
           ./general/common.nix
