@@ -12,6 +12,8 @@
       brave
       discord
       vscode
+      bibata-cursors
+      flameshot
     ];
     shell = pkgs.fish;
   };

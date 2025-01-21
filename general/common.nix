@@ -34,6 +34,17 @@
   environment.systemPackages = with pkgs; [
     micro
     git
+      xclip
+    bat
+    eza
   ];
+
+  environment.shellAliases = {
+    ls = "eza -F";
+    ll = "eza -F -l -a -g";
+    l = "eza -F";
+    la = "eza -F -a";
+    ip = "ip --color=auto";
+  };
 }
 
