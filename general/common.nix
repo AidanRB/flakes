@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # Enable flakes, set up automatic updates from GitHub, storage optimization
