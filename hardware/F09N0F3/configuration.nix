@@ -9,6 +9,8 @@
 
   networking.hostName = "F09N0F3"; # Define your hostname.
 
+  services.printing.enable = true;
+
   system.stateVersion = "24.11";
 }
 
