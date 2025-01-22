@@ -14,6 +14,7 @@
       vscode
       bibata-cursors
       flameshot
+      blender
     ];
     shell = pkgs.fish;
   };
