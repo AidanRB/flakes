@@ -4,9 +4,14 @@
   inputs = {
     # Add nixpkgs unstable as the default source for packages
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs }@inputs: {
+  outputs = { self, nixpkgs, home-manager }@inputs: {
 
     nixosConfigurations = {
       F09N0F3 = nixpkgs.lib.nixosSystem {
