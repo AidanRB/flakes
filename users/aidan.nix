@@ -56,6 +56,17 @@ in
 
   home-manager.users.aidan = {
     dconf.settings = {
+      # Pinned apps
+      "org/gnome/shell" = {
+        favorite-apps = [
+          "brave-browser.desktop"
+          "org.gnome.Nautilus.desktop"
+          "discord.desktop"
+          "steam.desktop"
+        ];
+      };
+
+      # Custom keybinds
       "org/gnome/settings-daemon/plugins/media-keys" = {
         custom-keybindings = [
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
