@@ -13,7 +13,7 @@
 
       brave
       discord
-      vscode
+      vscode-fhs
       bibata-cursors
       speedcrunch
       flameshot
