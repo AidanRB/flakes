@@ -1,4 +1,24 @@
-{ pkgs, home-manager, ... }:
+{ pkgs, ... }:
+
+let
+
+  toggleDND = pkgs.writeTextFile {
+    name = "toggleDND";
+    text = ''
+      #!/usr/bin/env bash
+
+      value=$(gsettings get org.gnome.desktop.notifications show-banners)
+      if [[ $value == 'true' ]]
+      then
+        gsettings set org.gnome.desktop.notifications show-banners false
+      else
+        gsettings set org.gnome.desktop.notifications show-banners true
+      fi
+    '';
+    executable = true;
+  };
+
+in
 
 {
   users.users.aidan = {
@@ -36,38 +56,40 @@
 
   home-manager.users.aidan = {
     dconf.settings = {
-      "/org/gnome/settings-daemon/plugins/media-keys/" = {
+      "org/gnome/settings-daemon/plugins/media-keys" = {
         custom-keybindings = [
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
         ];
+      };
 
-        "custom-keybindings/custom0" = {
-          binding = "<Super>t";
-          command = "kgx";
-          name = "console";
-        };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+        binding = "<Super>t";
+        command = "kgx";
+        name = "console";
+      };
 
-        "custom-keybindings/custom1" = {
-          binding = "Print";
-          command = "bash -c \"flameshot gui > /dev/null\"";
-          name = "flameshot";
-        };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+        binding = "Print";
+        command = "bash -c \"flameshot gui > /dev/null\"";
+        name = "flameshot";
+      };
 
-        "custom-keybindings/custom2" = {
-          binding = "<Super>c";
-          command = "speedcrunch";
-          name = "speedcrunch";
-        };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
+        binding = "<Super>c";
+        command = "speedcrunch";
+        name = "speedcrunch";
+      };
 
-        "custom-keybindings/custom3" = {
-          binding = "<Super>d";
-          command = "/home/aidan/Documents/code/toggle_dnd";
-          name = "toggle_dnd";
-        };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
+        binding = "<Super>d";
+        command = "${toggleDND}";
+        name = "toggle_dnd";
       };
     };
+
+    home.stateVersion = "24.11";
   };
 }

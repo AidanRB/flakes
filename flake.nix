@@ -19,6 +19,7 @@
         modules = [
           ./hardware/F09N0F3/configuration.nix
           ./desktops/gnome.nix
+          home-manager.nixosModules.home-manager
           ./users/aidan.nix
           ./general/common.nix
         ];
