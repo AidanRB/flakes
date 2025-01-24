@@ -35,7 +35,6 @@ in
       discord
       vscode-fhs
       nixfmt-rfc-style
-      bibata-cursors
       speedcrunch
       flameshot
       helvum
@@ -55,6 +54,21 @@ in
   };
 
   home-manager.users.aidan = {
+    gtk = {
+      enable = true;
+
+      cursorTheme = {
+        name = "Bibata-Modern-Classic";
+        package = pkgs.bibata-cursors;
+      };
+    };
+
+    home = {
+      keyboard.options = [ "compose:caps" ];
+
+      stateVersion = "24.11";
+    };
+
     dconf.settings = {
       # Pinned apps
       "org/gnome/shell" = {
@@ -100,7 +114,5 @@ in
         name = "toggle_dnd";
       };
     };
-
-    home.stateVersion = "24.11";
   };
 }
