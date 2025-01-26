@@ -12,7 +12,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, reuben }: {
 
     nixosConfigurations = {
       F09N0F3 = nixpkgs.lib.nixosSystem {
