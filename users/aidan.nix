@@ -26,21 +26,9 @@ in
     description = "Aidan Bennett";
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
-      # games
-      prismlauncher
-      gamehub
-      osu-lazer-bin
-
       brave
       discord
-      vscode-fhs
-      nixfmt-rfc-style
-      speedcrunch
-      flameshot
-      helvum
-      nmap
-      nextcloud-client
-      qownnotes
+      ghostty
     ];
     shell = pkgs.fish;
   };

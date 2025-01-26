@@ -14,17 +14,17 @@
 
   outputs = inputs@{ self, nixpkgs, home-manager, reuben }: {
 
-    nixosConfigurations = {
-      F09N0F3 = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./hardware/F09N0F3/configuration.nix
-          ./desktops/gnome.nix
-          home-manager.nixosModules.home-manager
-          ./users/aidan.nix
-          ./general/common.nix
-        ];
-      };
+      nixosConfigurations = {
+        F09N0F3 = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hardware/F09N0F3/configuration.nix
+            ./desktops/gnome.nix
+            home-manager.nixosModules.home-manager
+            ./users/aidan-full.nix
+            ./general/common.nix
+          ];
+        };
 
       BHZ8VC3 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
