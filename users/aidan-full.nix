@@ -21,4 +21,6 @@
     libreoffice
     vlc
   ];
+
+  programs.steam.enable = true;
 }
