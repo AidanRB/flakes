@@ -36,9 +36,19 @@ in
   programs.fish.enable = true;
   programs.steam.enable = true;
 
-  environment.variables = {
-    EDITOR = "micro";
-    VISUAL = "micro";
+  environment = {
+    shellAliases = {
+      l = "eza --icons --classify=always";
+      ls = "eza --icons --classify=always";
+      la = "eza --icons --classify=always --all";
+      ll = "eza --icons --classify=always --long --all --group --mounts --git --extended";
+      tree = "eza --icons --classify=always --tree";
+    };
+
+    variables = {
+      EDITOR = "micro";
+      VISUAL = "micro";
+    };
   };
 
   home-manager.users.aidan = {

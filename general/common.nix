@@ -41,11 +41,6 @@
   ];
 
   environment.shellAliases = {
-    l = "eza --classify=always";
-    ls = "eza --classify=always";
-    la = "eza --classify=always --all";
-    ll = "eza --classify=always --long --all --group --mounts --git --extended";
-    tree = "eza --classify=always --tree";
     ip = "ip --color=auto";
   };
 }
