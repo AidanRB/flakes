@@ -18,6 +18,16 @@
   };
 
   networking.hostName = "J8YPRL3"; # Define your hostname.
+
+  services.tailscale = {
+    enable = true;
+    useRoutingFeatures = "client";
+  };
+
+  users.users.aidan.packages = with pkgs; [
+    vscode-fhs
+  ];
+
   # systemd.services.NetworkManager-wait-online.enable = false;
 
   # # Router
