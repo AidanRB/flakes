@@ -28,7 +28,10 @@
   boot.supportedFilesystems = [ "ntfs" ];
 
   # Set your time zone.
-  time.timeZone = "America/New_York";
+  time = {
+    timeZone = "America/New_York";
+    hardwareClockInLocalTime = true;
+  };
 
   nixpkgs.config.allowUnfree = true;
 
