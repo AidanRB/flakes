@@ -46,11 +46,6 @@ in
       ll = "eza --icons --classify=always --long --all --group --mounts --git --extended";
       tree = "eza --icons --classify=always --tree";
     };
-
-    variables = {
-      EDITOR = "micro";
-      VISUAL = "micro";
-    };
   };
 
   home-manager.users.aidan = {
@@ -157,6 +152,8 @@ in
       keyboard.options = [ "compose:caps" ];
 
       sessionVariables = {
+        EDITOR = "micro";
+        VISUAL = "micro";
         fish_greeting = "";
       };
 
