@@ -4,7 +4,10 @@
   inputs = {
     # Add nixpkgs unstable as the default source for packages
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    reuben.url = "github:rtbennett/flakes";
+    reuben = {
+      url = "github:rtbennett/flakes";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
