@@ -29,6 +29,9 @@ in
       brave
       discord
       ghostty
+
+      speedcrunch
+      flameshot
     ];
     shell = pkgs.fish;
   };

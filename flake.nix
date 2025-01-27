@@ -4,6 +4,7 @@
   inputs = {
     # Add nixpkgs unstable as the default source for packages
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+
     # reuben = {
     #   url = "github:rtbennett/flakes";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -43,6 +44,17 @@
             ./desktops/gnome.nix
             ./users/reuben.nix
             # reuben.BHZ8VC3
+            ./general/common.nix
+          ];
+        };
+
+        J8YPRL3 = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hardware/J8YPRL3.nix
+            ./desktops/gnome.nix
+            home-manager.nixosModules.home-manager
+            ./users/aidan.nix
             ./general/common.nix
           ];
         };

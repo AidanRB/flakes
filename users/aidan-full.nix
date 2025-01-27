@@ -13,11 +13,12 @@
 
     vscode-fhs
     nixfmt-rfc-style
-    speedcrunch
-    flameshot
     helvum
     nmap
     nextcloud-client
     qownnotes
+    xournalpp
+    libreoffice
+    vlc
   ];
 }
