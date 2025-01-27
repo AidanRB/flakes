@@ -12,7 +12,14 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, reuben }: {
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      home-manager,
+      reuben,
+    }:
+    {
 
       nixosConfigurations = {
         F09N0F3 = nixpkgs.lib.nixosSystem {
@@ -26,16 +33,16 @@
           ];
         };
 
-      BHZ8VC3 = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./hardware/BHZ8VC3/configuration.nix
-          ./desktops/gnome.nix
-          ./users/reuben.nix
-          reuben.BHZ8VC3
-          ./general/common.nix
-        ];
+        BHZ8VC3 = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hardware/BHZ8VC3/configuration.nix
+            ./desktops/gnome.nix
+            ./users/reuben.nix
+            reuben.BHZ8VC3
+            ./general/common.nix
+          ];
+        };
       };
     };
-  };
 }
