@@ -9,6 +9,9 @@
     spice-gtk
   ];
 
-  virtualisation.libvirtd.enable = true;
+  virtualisation = {
+    libvirtd.enable = true;
+    spiceUSBRedirection.enable = true;
+  };
   programs.virt-manager.enable = true;
 }
