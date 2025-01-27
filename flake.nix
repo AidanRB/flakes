@@ -4,10 +4,10 @@
   inputs = {
     # Add nixpkgs unstable as the default source for packages
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    reuben = {
-      url = "github:rtbennett/flakes";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # reuben = {
+    #   url = "github:rtbennett/flakes";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -20,7 +20,7 @@
       self,
       nixpkgs,
       home-manager,
-      reuben,
+      # reuben,
     }:
     {
 
@@ -41,8 +41,8 @@
           modules = [
             ./hardware/BHZ8VC3/configuration.nix
             ./desktops/gnome.nix
-            # ./users/reuben.nix
-            reuben.BHZ8VC3
+            ./users/reuben.nix
+            # reuben.BHZ8VC3
             ./general/common.nix
           ];
         };
