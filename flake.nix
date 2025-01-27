@@ -41,8 +41,8 @@
           modules = [
             ./hardware/BHZ8VC3/configuration.nix
             ./desktops/gnome.nix
-            # ./users/reuben.nix
-            reuben.BHZ8VC3
+            ./users/reuben.nix
+            # reuben.BHZ8VC3
             ./general/common.nix
           ];
         };
