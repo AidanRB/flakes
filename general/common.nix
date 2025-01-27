@@ -36,8 +36,8 @@
   # $ nix search nixpkgs [term]
   environment.systemPackages = with pkgs; [
     micro
+    xclip
     git
-      xclip
     bat
     eza
   ];
