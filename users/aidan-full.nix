@@ -20,6 +20,7 @@
     xournalpp
     libreoffice
     vlc
+    resources
   ];
 
   programs.steam = {
