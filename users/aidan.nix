@@ -59,8 +59,6 @@ in
           functions = {
             nix-shell = "command nix-shell --run fish $argv";
 
-            ls = "command ls --icons $argv";
-
             fish_prompt = {
               body = ''
                 set -l last_pipestatus $pipestatus

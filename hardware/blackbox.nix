@@ -1,16 +1,19 @@
 { pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      /etc/nixos/hardware-configuration.nix
-      ./UEFI.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    /etc/nixos/hardware-configuration.nix
+    ./UEFI.nix
+  ];
 
   fileSystems = {
     "/".options = [ "compress=zstd" ];
     "/home".options = [ "compress=zstd" ];
-    "/nix".options = [ "compress=zstd" "noatime" ];
+    "/nix".options = [
+      "compress=zstd"
+      "noatime"
+    ];
   };
   swapDevices = [ { device = "/swap/swapfile"; } ];
 
@@ -23,13 +26,6 @@
   # hibernate after 30m asleep in suspend-then-hibernate
   systemd.sleep.extraConfig = "HibernateDelaySec=30m";
 
-  # hardware support
-  services.hardware.openrgb = {
-    enable = true;
-    package = pkgs.openrgb-with-all-plugins;
-  };
-  services.ratbagd.enable = true;
-
   networking = {
     hostName = "blackbox"; # Define your hostname.
 
@@ -38,10 +34,30 @@
       # 7777 terraria
       # 1714 - 1764 kde connect
       # 25565/8123 minecraft/dynmap
-      allowedTCPPorts = [ 4567 7777 25565 8123 ];
-      allowedTCPPortRanges = [ { from = 1714; to = 1764; } ];
-      allowedUDPPorts = [ 4567 7777 25565 8123 ];
-      allowedUDPPortRanges = [ { from = 1714; to = 1764; } ];
+      allowedTCPPorts = [
+        4567
+        7777
+        25565
+        8123
+      ];
+      allowedTCPPortRanges = [
+        {
+          from = 1714;
+          to = 1764;
+        }
+      ];
+      allowedUDPPorts = [
+        4567
+        7777
+        25565
+        8123
+      ];
+      allowedUDPPortRanges = [
+        {
+          from = 1714;
+          to = 1764;
+        }
+      ];
     };
   };
 
@@ -53,7 +69,7 @@
     # multimedia
     spotify
     kdenlive
-      mediainfo
+    mediainfo
     obs-studio
 
     # web
@@ -80,9 +96,25 @@
       drivers = [ pkgs.brlaser ];
     };
 
+    ollama = {
+      enable = true;
+      loadModels = [
+        "deepseek-r1:8b"
+        "qwen2.5-coder:1.5b"
+      ];
+    };
+
+    open-webui.enable = true;
+
     tailscale.enable = true;
     openssh.enable = true;
-    ollama.enable = true;
+
+    # hardware support
+    hardware.openrgb = {
+      enable = true;
+      package = pkgs.openrgb-with-all-plugins;
+    };
+    ratbagd.enable = true;
   };
 
   system.stateVersion = "23.11";
