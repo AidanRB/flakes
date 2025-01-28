@@ -112,6 +112,7 @@ in
             font-size = 10;
             window-padding-x = 6;
             gtk-single-instance = true;
+            scrollback-limit = 100000000;
           };
           themes = {
             kgx = {
