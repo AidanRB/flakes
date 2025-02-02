@@ -15,6 +15,10 @@
       bibata-cursors
       flameshot
       blender
+      sshfs
+      android-tools
+      scrcpy
+      
     ];
     shell = pkgs.fish;
   };
