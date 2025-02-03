@@ -7,8 +7,6 @@
       ../UEFI.nix
     ];
 
-  # enable hibernation
-  boot.initrd.systemd.enable = true;
   services.logind.lidSwitch = "hibernate";
 
   networking.hostName = "F09N0F3"; # Define your hostname.
