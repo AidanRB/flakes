@@ -69,6 +69,17 @@
             ./general/common.nix
           ];
         };
+
+        gelato = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hardware/gelato.nix
+            ./desktops/gnome.nix
+            home-manager.nixosModules.home-manager
+            ./users/anna.nix
+            ./general/common.nix
+          ];
+        };
       };
     };
 }
