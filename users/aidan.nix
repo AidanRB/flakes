@@ -24,7 +24,7 @@ in
   users.users.aidan = {
     isNormalUser = true;
     description = "Aidan Bennett";
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "networkmanager" "wheel" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       brave
       discord
