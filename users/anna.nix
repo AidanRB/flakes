@@ -4,7 +4,10 @@
   users.users.anna = {
     isNormalUser = true;
     description = "Anna Bennett";
-    extraGroups = [ "networkmanager" "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       firefox
       prismlauncher
@@ -82,6 +85,17 @@
           package = pkgs.bibata-cursors;
         };
       };
+
+      home = {
+        sessionVariables = {
+          EDITOR = "micro";
+          VISUAL = "micro";
+          fish_greeting = "";
+        };
+
+        stateVersion = "24.05";
+      };
+
     };
   };
 
