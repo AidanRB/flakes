@@ -7,6 +7,8 @@
       ../UEFI.nix
     ];
 
+  services.logind.lidSwitch = "hibernate";
+
   networking.hostName = "F09N0F3"; # Define your hostname.
 
   services.printing.enable = true;

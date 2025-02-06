@@ -4,7 +4,7 @@
   users.users.reuben = {
     isNormalUser = true;
     description = "Reuben Bennett";
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "networkmanager" "wheel" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       # games
       prismlauncher

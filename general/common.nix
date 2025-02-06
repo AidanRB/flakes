@@ -25,7 +25,25 @@
     ];
   };
 
-  boot.supportedFilesystems = [ "ntfs" ];
+  boot = {
+    supportedFilesystems = [ "ntfs" ];
+
+    # enable hibernation
+    initrd.systemd.enable = true;
+
+    # boot animation
+    plymouth = {
+      enable = true;
+      theme = "nixos-bgrt";
+      themePackages = [
+        pkgs.nixos-bgrt-plymouth
+      ];
+    };
+    kernelParams = [
+      "quiet"
+      "splash"
+    ];
+  };
 
   # Set your time zone.
   time = {
