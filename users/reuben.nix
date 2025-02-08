@@ -4,7 +4,10 @@
   users.users.reuben = {
     isNormalUser = true;
     description = "Reuben Bennett";
-    extraGroups = [ "networkmanager" "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
       # games
       prismlauncher
@@ -14,11 +17,11 @@
       vscode-fhs
       bibata-cursors
       flameshot
-      blender
+      # blender
       sshfs
       android-tools
       scrcpy
-      
+      speedcrunch
     ];
     shell = pkgs.fish;
   };
@@ -26,7 +29,7 @@
   programs.fish.enable = true;
   programs.steam.enable = true;
 
-    home-manager.users.reuben = {
+  home-manager.users.reuben = {
     gtk = {
       enable = true;
       cursorTheme = {
@@ -60,6 +63,6 @@
         command = "bash -c \"flameshot gui > /dev/null\"";
         name = "flameshot";
       };
-    };  
-  };  
+    };
+  };
 }

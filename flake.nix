@@ -80,6 +80,18 @@
             ./general/common.nix
           ];
         };
+
+        fractured = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hardware/fractured.nix
+            ./desktops/gnome.nix
+            home-manager.nixosModules.home-manager
+            ./users/reuben.nix
+            ./users/nicole.nix
+            ./general/common.nix
+          ];
+        };
       };
     };
 }
