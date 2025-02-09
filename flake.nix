@@ -87,7 +87,7 @@
             ./hardware/fractured.nix
             ./desktops/gnome.nix
             home-manager.nixosModules.home-manager
-            ./users/reuben.nix
+            ./users/reuben-full.nix
             ./users/nicole.nix
             ./general/common.nix
           ];
