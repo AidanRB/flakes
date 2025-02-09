@@ -104,7 +104,8 @@
       ];
     };
 
-    open-webui.enable = true;
+    # self-hosted chatgpt
+    # open-webui.enable = true;
 
     tailscale.enable = true;
     openssh.enable = true;
