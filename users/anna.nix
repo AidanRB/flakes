@@ -17,8 +17,6 @@
       lunar-client
       badlion-client
       # minecraft
-
-      gnome-tweaks
     ];
     shell = pkgs.fish;
   };
