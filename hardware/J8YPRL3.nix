@@ -25,7 +25,10 @@
 
     fprintd = {
       enable =  true;
-      driver = pkgs.libfprint-2-tod1-broadcom;
+      tod = {
+        enable = true;
+        driver = pkgs.libfprint-2-tod1-broadcom;
+      };
     };
   };
 
