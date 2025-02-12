@@ -32,7 +32,6 @@
     firewall = {
       # 4567 general
       # 7777 terraria
-      # 1714 - 1764 kde connect
       # 25565/8123 minecraft/dynmap
       allowedTCPPorts = [
         4567
@@ -40,23 +39,11 @@
         25565
         8123
       ];
-      allowedTCPPortRanges = [
-        {
-          from = 1714;
-          to = 1764;
-        }
-      ];
       allowedUDPPorts = [
         4567
         7777
         25565
         8123
-      ];
-      allowedUDPPortRanges = [
-        {
-          from = 1714;
-          to = 1764;
-        }
       ];
     };
   };
@@ -88,7 +75,14 @@
     amdgpu_top
     easyeffects
     piper
+
+    gnomeExtensions.gsconnect # gsconnect
   ];
+
+  programs.kdeconnect = {
+    enable = true;
+    package = pkgs.gnomeExtensions.gsconnect;
+  };
 
   services = {
     printing = {
