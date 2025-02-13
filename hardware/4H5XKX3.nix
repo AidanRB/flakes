@@ -1,33 +1,40 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      /etc/nixos/hardware-configuration.nix
-      ./UEFI.nix
-    ];
+  imports = [
+    /etc/nixos/hardware-configuration.nix
+    ./UEFI.nix
+  ];
 
   fileSystems = {
-  	"/".options = [ "compress=zstd" ];
+    "/".options = [ "compress=zstd" ];
     "/home".options = [ "compress=zstd" ];
-    "/nix".options = [ "compress=zstd" "noatime" ];
+    "/nix".options = [
+      "compress=zstd"
+      "noatime"
+    ];
   };
 
-  networking.hostName = "4H5XKX3"; # Define your hostname.
+  networking.hostName = "4H5XKX3";
 
-  services.tailscale = {
-    enable = true;
-    useRoutingFeatures = "client";
+  services = {
+    tailscale = {
+      enable = true;
+      useRoutingFeatures = "client";
+    };
+
+    fprintd = {
+      enable = true;
+      tod = {
+        enable = true;
+        driver = pkgs.libfprint-2-tod1-broadcom;
+      };
+    };
   };
 
   users.users.aidan.packages = with pkgs; [
     vscode-fhs
   ];
 
-  system.stateVersion = "25.05"; # Did you read the comment?
+  system.stateVersion = "25.05";
 }
-
