@@ -59,6 +59,18 @@
           ];
         };
 
+        # variable name cannot start with a number
+        _4H5XKX3 = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hardware/4H5XKX3.nix
+            ./desktops/gnome.nix
+            home-manager.nixosModules.home-manager
+            ./users/aidan.nix
+            ./general/common.nix
+          ];
+        };
+
         blackbox = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
