@@ -15,7 +15,7 @@
     ];
   };
 
-  networking.hostName = "_4H5XKX3";
+  networking.hostName = "ABF-4H5XKX3";
 
   services = {
     tailscale = {
