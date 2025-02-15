@@ -18,6 +18,12 @@ let
     executable = true;
   };
 
+  inkWallpaper = pkgs.fetchurl {
+    url = "https://images.unsplash.com/photo-1541701494587-cb58502866ab";
+    name = "lucas-k-wQLAGv4_OYs-unsplash.jpg";
+    hash = "sha256-qFD7FFqY2l2Fsev/YPu1/f7f29BntxsO1ezJj2BlMs8=";
+  };
+
 in
 
 {
@@ -163,6 +169,12 @@ in
       };
 
       dconf.settings = {
+        # Wallpaper
+        "org/gnome/desktop/background" = {
+          picture-uri = "${inkWallpaper}";
+          picture-uri-dark = "${inkWallpaper}";
+        };
+
         # Pinned apps
         "org/gnome/shell" = {
           favorite-apps = [
