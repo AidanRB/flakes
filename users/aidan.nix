@@ -30,7 +30,10 @@ in
   users.users.aidan = {
     isNormalUser = true;
     description = "Aidan Bennett";
-    extraGroups = [ "networkmanager" "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       brave
       discord-canary
@@ -169,6 +172,18 @@ in
       };
 
       dconf.settings = {
+        "org/gnome/desktop/interface" = {
+          accent-color = "teal";
+          clock-format = "12h";
+          clock-show-weekday = true;
+          show-battery-percentage = true;
+        };
+
+        # pointer acceleration off
+        "org/gnome/desktop/peripherals/mouse" = {
+          accel-profile = "flat";
+        };
+
         # Wallpaper
         "org/gnome/desktop/background" = {
           picture-uri = "${inkWallpaper}";
@@ -183,6 +198,17 @@ in
             "discord-canary.desktop"
             "steam.desktop"
           ];
+        };
+
+        "org/gnome/desktop/wm/preferences" = {
+          action-middle-click-titlebar = "minimize";
+        };
+
+        "org/gnome/desktop/wm/keybindings" = {
+          switch-applications = [ ];
+          switch-applications-backward = [ ];
+          switch-windows = [ "<Alt>Tab" ];
+          switch-windows-backward = [ "<Shift><Alt>Tab" ];
         };
 
         # Custom keybinds
