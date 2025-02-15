@@ -27,7 +27,7 @@ in
     extraGroups = [ "networkmanager" "wheel" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       brave
-      discord
+      discord-canary
       ghostty
 
       speedcrunch
@@ -168,7 +168,7 @@ in
           favorite-apps = [
             "brave-browser.desktop"
             "org.gnome.Nautilus.desktop"
-            "discord.desktop"
+            "discord-canary.desktop"
             "steam.desktop"
           ];
         };
