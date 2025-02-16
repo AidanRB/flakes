@@ -41,11 +41,20 @@ in
 
       speedcrunch
       flameshot
+
+      gnomeExtensions.gsconnect
     ];
     shell = pkgs.fish;
   };
 
-  programs.fish.enable = true;
+  programs = {
+    fish.enable = true;
+
+    kdeconnect = {
+      enable = true;
+      package = pkgs.gnomeExtensions.gsconnect;
+    };
+  };
 
   environment = {
     shellAliases = {

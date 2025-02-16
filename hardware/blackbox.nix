@@ -75,14 +75,7 @@
     amdgpu_top
     easyeffects
     piper
-
-    gnomeExtensions.gsconnect # gsconnect
   ];
-
-  programs.kdeconnect = {
-    enable = true;
-    package = pkgs.gnomeExtensions.gsconnect;
-  };
 
   services = {
     printing = {
