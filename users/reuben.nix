@@ -16,7 +16,7 @@
       discord
       vscode-fhs
       flameshot
-      # blender
+      blender
       sshfs
       android-tools
       scrcpy
