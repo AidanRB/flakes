@@ -54,7 +54,7 @@
             ./hardware/J8YPRL3.nix
             ./desktops/gnome.nix
             home-manager.nixosModules.home-manager
-            ./users/aidan.nix
+            ./users/aidan-gui.nix
             ./general/common.nix
           ];
         };
@@ -65,7 +65,7 @@
             ./hardware/ABF-4H5XKX3.nix
             ./desktops/gnome.nix
             home-manager.nixosModules.home-manager
-            ./users/aidan.nix
+            ./users/aidan-gui.nix
             ./general/common.nix
           ];
         };

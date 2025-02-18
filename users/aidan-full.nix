@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./aidan.nix
+    ./aidan-gui.nix
   ];
 
   users.users.aidan.packages = with pkgs; [
