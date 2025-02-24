@@ -15,6 +15,7 @@
 
   system.autoUpgrade = {
     enable = true;
+    operation = "boot";
     flake = "github:aidanrb/flakes";
     flags = [
       "--no-write-lock-file"
