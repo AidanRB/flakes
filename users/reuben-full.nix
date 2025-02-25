@@ -14,7 +14,7 @@
     superTux
     superTuxKart
     pingus
-    granatier
+    kdePackages.granatier
     gnome-mines
     steam-run # terraria
 

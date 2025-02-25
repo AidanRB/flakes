@@ -51,7 +51,7 @@
   users.users.aidan.packages = with pkgs; [
     # games
     gamehub
-    granatier
+    kdePackages.granatier
 
     # multimedia
     spotify
