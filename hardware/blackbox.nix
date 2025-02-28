@@ -27,7 +27,9 @@
   systemd.sleep.extraConfig = "HibernateDelaySec=30m";
 
   networking = {
-    hostName = "blackbox"; # Define your hostname.
+    hostName = "blackbox";
+
+    interfaces.enp8s0.wakeOnLan.enable = true;
 
     firewall = {
       # 4567 general
