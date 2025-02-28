@@ -55,7 +55,7 @@
 
     # multimedia
     spotify
-    kdenlive
+    kdePackages.kdenlive
     mediainfo
     obs-studio
 
