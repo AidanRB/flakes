@@ -20,7 +20,7 @@
   boot = {
     # hibernation
     kernelParams = [ "resume_offset=13116672" ];
-    resumeDevice = "/dev/nvme0n1p5";
+    resumeDevice = "/dev/disk/by-label/nixos";
   };
 
   # hibernate after 30m asleep in suspend-then-hibernate
