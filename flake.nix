@@ -43,6 +43,7 @@
             ./hardware/BHZ8VC3/configuration.nix
             ./desktops/gnome.nix
             ./users/reuben.nix
+            home-manager.nixosModules.home-manager
             # reuben.BHZ8VC3
             ./general/common.nix
           ];
