@@ -195,7 +195,7 @@ in
         entries = [
           "${pkgs.bitwarden}/share/applications/bitwarden.desktop"
         ];
-      }
+      };
     };
   };
 }
