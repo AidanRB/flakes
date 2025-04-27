@@ -24,6 +24,13 @@ let
     hash = "sha256-qFD7FFqY2l2Fsev/YPu1/f7f29BntxsO1ezJj2BlMs8=";
   };
 
+  stopGnomeSsh = pkgs.writeTextFile {
+    name = "gnome-keyring-ssh.desktop";
+    text = (builtins.readFile (pkgs.gnome-keyring + "/etc/xdg/autostart/gnome-keyring-ssh.desktop")) + ''
+      Hidden=true
+    '';
+  };
+
 in
 
 {
@@ -194,6 +201,7 @@ in
         enable = true;
         entries = [
           "${pkgs.bitwarden}/share/applications/bitwarden.desktop"
+          stopGnomeSsh
         ];
       };
     };
