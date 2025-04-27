@@ -10,6 +10,7 @@
     prismlauncher
     gamehub
     osu-lazer-bin
+    lutris
 
     vscode-fhs
     nixfmt-rfc-style

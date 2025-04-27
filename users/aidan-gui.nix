@@ -42,6 +42,7 @@ in
 
       speedcrunch
       flameshot
+      bitwarden
 
       gnomeExtensions.gsconnect
     ];
@@ -108,6 +109,10 @@ in
 
       home = {
         keyboard.options = [ "compose:caps" ];
+        shell.enableFishIntegration = true;
+        sessionVariables = {
+          SSH_AUTH_SOCK = "/home/aidan/.bitwarden-ssh-agent.sock";
+        };
       };
 
       dconf.settings = {
@@ -184,6 +189,13 @@ in
           name = "toggle_dnd";
         };
       };
+
+      xdg.autostart = {
+        enable = true;
+        entries = [
+          "${pkgs.bitwarden}/share/applications/bitwarden.desktop"
+        ];
+      }
     };
   };
 }
