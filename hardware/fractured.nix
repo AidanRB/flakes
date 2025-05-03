@@ -14,7 +14,7 @@
     openssh.enable = true;
   };
 
-  environment.systemPackages = with pigs; [
+  environment.systemPackages = with pkgs; [
     gnome-builder
   ];
 
