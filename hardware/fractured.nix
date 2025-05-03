@@ -14,6 +14,10 @@
     openssh.enable = true;
   };
 
+  environment.systemPackages = with pigs; [
+    gnome-builder
+  ];
+
   # for arduino cloud agent
   programs.nix-ld.enable = true;
 
