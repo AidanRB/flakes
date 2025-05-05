@@ -44,7 +44,7 @@ in
     ];
     packages = with pkgs; [
       brave
-      discord-canary
+      discord
       ghostty
 
       speedcrunch
@@ -146,7 +146,7 @@ in
           favorite-apps = [
             "brave-browser.desktop"
             "org.gnome.Nautilus.desktop"
-            "discord-canary.desktop"
+            "discord.desktop"
             "steam.desktop"
           ];
         };
