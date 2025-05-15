@@ -79,6 +79,8 @@
     piper
   ];
 
+  programs.coolercontrol.enable = true;
+
   services = {
     printing = {
       enable = true;
