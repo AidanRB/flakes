@@ -52,6 +52,8 @@ in
       bitwarden
 
       gnomeExtensions.gsconnect
+
+      dm-mono
     ];
   };
 
