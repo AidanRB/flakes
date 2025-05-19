@@ -5,9 +5,10 @@
     ./reuben.nix
   ];
 
+  programs.firefox.enable = true;
+
   users.users.reuben.packages = with pkgs; [
     # web
-    firefox
     google-chrome
 
     # games

@@ -63,7 +63,6 @@
 
     # web
     google-chrome
-    firefox
     thunderbird
 
     # tools
@@ -79,7 +78,10 @@
     piper
   ];
 
-  programs.coolercontrol.enable = true;
+  programs = {
+    coolercontrol.enable = true;
+    firefox.enable = true;
+  };
 
   services = {
     printing = {

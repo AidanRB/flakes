@@ -9,7 +9,6 @@
       "wheel"
     ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
-      firefox
       prismlauncher
       brave
       discord
@@ -97,6 +96,9 @@
     };
   };
 
-  programs.fish.enable = true;
-  programs.steam.enable = true;
+  programs = {
+    fish.enable = true;
+    steam.enable = true;
+    firefox.enable = true;
+  };
 }

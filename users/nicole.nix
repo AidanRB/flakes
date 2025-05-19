@@ -11,7 +11,8 @@
       # web
       brave
       google-chrome
-      firefox
     ];
   };
+
+  programs.firefox.enable = true;
 }
