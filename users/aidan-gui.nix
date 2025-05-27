@@ -72,7 +72,7 @@ in
           enableFishIntegration = true;
           settings = {
             theme = "kgx";
-            font-family = "Source Code Pro";
+            font-family = "DM Mono";
             font-size = 10;
             window-padding-x = 6;
             gtk-single-instance = true;
