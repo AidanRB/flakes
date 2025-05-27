@@ -20,7 +20,7 @@
     modesetting.enable = true;
     open = true;
     nvidiaSettings = true;
-  }
+  };
 
   system.stateVersion = "22.05";
 }
