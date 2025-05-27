@@ -104,6 +104,17 @@
             ./general/common.nix
           ];
         };
+
+        greenkeys = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hardware/greenkeys.nix
+            ./desktops/gnome.nix
+            home-manager.nixosModules.home-manager
+            ./users/aidan-full.nix
+            ./general/common.nix
+          ];
+        };
       };
     };
 }
