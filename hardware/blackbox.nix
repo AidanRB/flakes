@@ -66,7 +66,7 @@
     thunderbird
 
     # tools
-    appeditor
+    menulibre
     qflipper
     dig
     gcolor3
