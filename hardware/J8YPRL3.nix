@@ -32,9 +32,13 @@
     };
   };
 
-  users.users.aidan.packages = with pkgs; [
-    vscode-fhs
-  ];
+  virtualisation.docker = {
+    enable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+  };
 
   # systemd.services.NetworkManager-wait-online.enable = false;
 
