@@ -105,6 +105,28 @@ in
             };
           };
         };
+
+        gnome-shell = {
+          enable = true;
+          extensions = [
+            { package = pkgs.gnomeExtensions.appindicator; }
+            { package = pkgs.gnomeExtensions.alphabetical-app-grid; }
+            { package = pkgs.gnomeExtensions.astra-monitor; }
+            { package = pkgs.gnomeExtensions.brightness-control-using-ddcutil; }
+            { package = pkgs.gnomeExtensions.caffeine; }
+            { package = pkgs.gnomeExtensions.clipboard-indicator; }
+            { package = pkgs.gnomeExtensions.grand-theft-focus; }
+            { package = pkgs.gnomeExtensions.gsconnect; }
+            { package = pkgs.gnomeExtensions.hibernate-status-button; }
+            { package = pkgs.gnomeExtensions.removable-drive-menu; }
+            { package = pkgs.gnomeExtensions.quick-settings-audio-devices-hider; }
+            { package = pkgs.gnomeExtensions.quick-settings-audio-devices-renamer; }
+            { package = pkgs.gnomeExtensions.quick-settings-audio-panel; }
+            { package = pkgs.gnomeExtensions.systemd-status; }
+            { package = pkgs.gnomeExtensions.tailscale-status; }
+            { package = pkgs.gnomeExtensions.tiling-assistant; }
+          ];
+        };
       };
 
       gtk = {
@@ -196,6 +218,14 @@ in
           binding = "<Super>d";
           command = "${toggleDND}";
           name = "toggle_dnd";
+        };
+
+        # Extension preferences
+        "org/gnome/shell/extensions/clipboard-indicator".toggle-menu = "['<Super>v']";
+        "org/gnome/shell/extensions/hibernate-status-button".show-hybrid-sleep = false;
+        "org/gnome/shell/extensions/tiling-assistant" = {
+          enable-tiling-popup = false;
+          enable-raise-tile-group = false;
         };
       };
 
