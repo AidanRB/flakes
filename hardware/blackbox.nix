@@ -111,7 +111,7 @@
     ratbagd.enable = true;
 
     # disable suspending after wakeOnLan while sitting on the login screen
-    xserver.displayManager.gdm.autoSuspend = false;
+    displayManager.gdm.autoSuspend = false;
   };
 
   system.stateVersion = "23.11";
