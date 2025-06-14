@@ -222,6 +222,10 @@ in
 
         # Extension preferences
         "org/gnome/shell/extensions/clipboard-indicator".toggle-menu = "['<Super>v']";
+        "org/gnome/shell/extensions/display-brightness-ddcutil" = {
+          button-location = 1;
+          hide-system-indicator = true;
+        };
         "org/gnome/shell/extensions/hibernate-status-button".show-hybrid-sleep = false;
         "org/gnome/shell/extensions/tiling-assistant" = {
           enable-tiling-popup = false;
