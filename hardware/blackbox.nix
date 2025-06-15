@@ -104,9 +104,13 @@
     openssh.enable = true;
 
     # hardware support
-    hardware.openrgb = {
-      enable = true;
-      package = pkgs.openrgb-with-all-plugins;
+    hardware = {
+      amdgpu.opencl.enable = true;
+
+      openrgb = {
+        enable = true;
+        package = pkgs.openrgb-with-all-plugins;
+      };
     };
     ratbagd.enable = true;
 
