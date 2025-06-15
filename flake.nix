@@ -115,6 +115,20 @@
             ./general/common.nix
           ];
         };
+
+        hpbook = nixos.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hardware/hpbook.nix
+            ./desktops/gnome.nix
+            home-manager.nixosModules.home-manager
+            ./users/aidan-gui.nix
+            ./users/reuben-full.nix
+            ,/users/nicole.nix
+            ./users/jonathan.nix
+            ./general/common.nix
+          ];
+        };
       };
     };
 }
