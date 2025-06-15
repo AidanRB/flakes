@@ -9,7 +9,7 @@
 
   networking.hostName = "hpbook"; # Define your hostname.
 
-  swpaDevices = [
+  swapDevices = [
     {
       device = "/var/lib/swapfile";
       size = 8 * 1024;
