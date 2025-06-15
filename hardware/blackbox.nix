@@ -17,6 +17,8 @@
   };
   swapDevices = [ { device = "/swap/swapfile"; } ];
 
+  hardware.amdgpu.opencl.enable = true;
+
   boot = {
     # hibernation
     kernelParams = [ "resume_offset=13116672" ];
@@ -105,8 +107,6 @@
 
     # hardware support
     hardware = {
-      amdgpu.opencl.enable = true;
-
       openrgb = {
         enable = true;
         package = pkgs.openrgb-with-all-plugins;
