@@ -9,10 +9,12 @@
 
   networking.hostName = "hpbook"; # Define your hostname.
 
-  swpaDevices = [ {
-    device = "/var/lib/swapfile";
-    size = 8*1024;
-  } ];
+  swpaDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 8 * 1024;
+    }
+  ];
 
   system.stateVersion = "23.05";
 }

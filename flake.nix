@@ -21,7 +21,7 @@
       self,
       nixpkgs,
       home-manager,
-      # reuben,
+    # reuben,
     }:
     {
 
@@ -124,7 +124,7 @@
             home-manager.nixosModules.home-manager
             ./users/aidan-gui.nix
             ./users/reuben-full.nix
-            ,/users/nicole.nix
+            ./users/nicole.nix
             ./users/jonathan.nix
             ./general/common.nix
           ];
