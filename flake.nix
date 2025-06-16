@@ -101,6 +101,7 @@
             home-manager.nixosModules.home-manager
             ./users/reuben-full.nix
             ./users/nicole.nix
+            ./users/liza.nix
             ./general/common.nix
           ];
         };
@@ -126,6 +127,7 @@
             ./users/reuben-full.nix
             ./users/nicole.nix
             ./users/jonathan.nix
+            ./users/liza.nix
             ./general/common.nix
           ];
         };
