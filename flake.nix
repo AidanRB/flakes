@@ -40,7 +40,7 @@
         BHZ8VC3 = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            ./hardware/BHZ8VC3/configuration.nix
+            ./hardware/BHZ8VC3.nix
             ./desktops/gnome.nix
             ./users/reuben.nix
             home-manager.nixosModules.home-manager
