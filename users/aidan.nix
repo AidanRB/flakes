@@ -83,6 +83,12 @@
           EDITOR = "micro";
           VISUAL = "micro";
           fish_greeting = "";
+          BAT_PAGER = "less --mouse";
+          # https://github.com/sharkdp/bat?tab=readme-ov-file#man
+          MANPAGER = "sh -c 'col -bx | bat -l man -p'";
+          MANROFFOPT = "-c";
+          SYSTEMD_PAGER = "bat -l syslog -p --strip-ansi=auto";
+          SYSTEMD_PAGERSECURE = "false";
         };
 
         stateVersion = "24.11";
