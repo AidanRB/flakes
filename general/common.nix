@@ -64,7 +64,10 @@
     eza
   ];
 
-  programs.command-not-found.enable = true;
+  programs = {
+    fish.enable = true;
+    command-not-found.enable = true;
+  };
 
   environment.shellAliases = {
     ip = "ip --color=auto";
