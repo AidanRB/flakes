@@ -36,41 +36,110 @@
 
             fish_prompt = {
               body = ''
-                set -l last_pipestatus $pipestatus
-                set -lx __fish_last_status $status # Export for __fish_print_pipestatus.
-                set -l normal (set_color normal)
-                set -q fish_color_status
-                or set -g fish_color_status --background=red white
+                set -l prompt_status $status
+                set -l retc red
+                test $prompt_status = 0; and set retc green
 
-                # Color the prompt differently when we're root
-                set -l color_cwd $fish_color_cwd
-                set -l suffix '>'
+                set -q __fish_git_prompt_showupstream
+                or set -g __fish_git_prompt_showupstream auto
+
+                function _nim_prompt_wrapper
+                  set retc $argv[1]
+                  set -l field_name $argv[2]
+                  set -l field_value $argv[3]
+
+                  set_color normal
+                  set_color $retc
+                  echo -n '─'
+                  set_color -o green
+                  echo -n '['
+                  set_color normal
+                  test -n $field_name
+                  and echo -n $field_name:
+                  set_color $retc
+                  echo -n $field_value
+                  set_color -o green
+                  echo -n ']'
+                end
+
+                set_color $retc
+                echo -n '╭─'
+                set_color -o green
+                echo -n [
+
                 if functions -q fish_is_root_user; and fish_is_root_user
-                    if set -q fish_color_cwd_root
-                        set color_cwd $fish_color_cwd_root
-                    end
-                    set suffix '#'
+                  set_color -o red
+                else
+                  set_color -o yellow
                 end
 
-                # Write pipestatus
-                # If the status was carried over (if no command is issued or if `set` leaves the status untouched), don't bold it.
-                set -l bold_flag --bold
-                set -q __fish_prompt_status_generation; or set -g __fish_prompt_status_generation $status_generation
-                if test $__fish_prompt_status_generation = $status_generation
-                    set bold_flag
-                end
-                set __fish_prompt_status_generation $status_generation
-                set -l status_color (set_color $fish_color_status)
-                set -l statusb_color (set_color $bold_flag $fish_color_status)
-                set -l prompt_status (__fish_print_pipestatus "[" "]" "|" "$status_color" "$statusb_color" $last_pipestatus)
+                echo -n $USER
+                set_color -o white
+                echo -n @
 
-                # add nix-shell info
-                if test -n "$IN_NIX_SHELL"
-                  set_color bryellow
-                  echo -n "<nix-shell> "
+                if test -z "$SSH_CLIENT"
+                  set_color -o blue
+                else
+                  set_color -o cyan
                 end
 
-                echo -n -s (prompt_login)' ' (set_color $color_cwd) (prompt_pwd --full-length-dirs 1) $normal (fish_vcs_prompt) $normal " "$prompt_status $suffix " "
+                echo -n (prompt_hostname)
+                set_color -o white
+                echo -n :(prompt_pwd)
+                set_color -o green
+                echo -n ']'
+
+                # nix-shell
+                set -q IN_NIX_SHELL
+                and echo -n '─['
+                and set_color -o yellow
+                and echo -n 'nix-shell'
+                and set_color -o green
+                and echo -n ']'
+
+                # Date
+                _nim_prompt_wrapper $retc "" (date +%X)
+
+                # Virtual Environment
+                set -q VIRTUAL_ENV_DISABLE_PROMPT
+                or set -g VIRTUAL_ENV_DISABLE_PROMPT true
+                set -q VIRTUAL_ENV
+                and _nim_prompt_wrapper $retc V (path basename "$VIRTUAL_ENV")
+
+                # git
+                set -l prompt_git (fish_git_prompt '%s')
+                test -n "$prompt_git"
+                and _nim_prompt_wrapper $retc G $prompt_git
+
+                # exit code
+                if test $prompt_status != 0
+                  set_color -o red
+                  echo -n '─'
+                  set_color -o green
+                  echo -n '['
+                  set_color -o red
+                  echo -n "$prompt_status"
+                  set_color -o green
+                  echo -n ']'
+                end
+
+                # New line
+                echo
+
+                # Background jobs
+                set_color normal
+
+                for job in (jobs)
+                  set_color $retc
+                  echo -n '│ '
+                  set_color brown
+                  echo $job
+                end
+
+                set_color normal
+                set_color $retc
+                echo -n '╰─> '
+                set_color normal
               '';
             };
           };
