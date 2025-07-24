@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   # Enable flakes, set up automatic updates from GitHub, storage optimization
@@ -9,13 +9,13 @@
     };
     gc = {
       automatic = true;
-      options = "--delete-older-than 14d";
+      options = lib.mkDefault "--delete-older-than 14d";
     };
   };
 
   system.autoUpgrade = {
     enable = true;
-    operation = "boot";
+    operation = lib.mkDefault "boot";
     flake = "github:aidanrb/flakes";
     flags = [
       "--no-write-lock-file"

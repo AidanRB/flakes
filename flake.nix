@@ -131,6 +131,19 @@
             ./general/common.nix
           ];
         };
+
+        base = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hardware/base.nix
+            ./general/kvm.nix
+            ./desktops/gnome.nix
+            home-manager.nixosModules.home-manager
+            ./users/aidan.nix
+            ./users/jonathan.nix
+            ./general/common.nix
+          ];
+        };
       };
     };
 }
