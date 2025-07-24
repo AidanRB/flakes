@@ -34,7 +34,7 @@
     intune.enable = true;
   };
 
-  users.users.aidan.packages = [
+  users.users.aidan.packages = with pkgs; [
     intune-portal
   ];
 
