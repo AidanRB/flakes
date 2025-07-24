@@ -30,7 +30,13 @@
         driver = pkgs.libfprint-2-tod1-broadcom;
       };
     };
+
+    intune.enable = true;
   };
+
+  users.users.aidan.packages = [
+    intune-portal
+  ];
 
   virtualisation.docker = {
     enable = true;
