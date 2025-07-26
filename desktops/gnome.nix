@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   # Enable the X11 windowing system.
@@ -9,7 +9,7 @@
   services.desktopManager.gnome.enable = true;
 
   # Remove packages I don't want
-  environment.gnome.excludePackages = (with pkgs; [
+  environment.gnome.excludePackages = lib.mkDefault (with pkgs; [
     gnome-tour
     gnome-photos
     epiphany

@@ -26,6 +26,15 @@
     {
 
       nixosConfigurations = {
+        gnomebook = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hardware/gnomebook.nix
+            ./desktops/gnome.nix
+            ./general/common.nix
+          ];
+        };
+
         F09N0F3 = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
