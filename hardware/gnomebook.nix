@@ -10,8 +10,6 @@
 
   networking.hostName = "gnomebook";
 
-  documentation.nixos.enable = false;
-
   services = {
     flatpak.enable = true;
 
