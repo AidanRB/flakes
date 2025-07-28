@@ -17,10 +17,13 @@
       vscode-fhs
       flameshot
       blender
+      bitwarden
+      ente-auth
       sshfs
       android-tools
       scrcpy
       speedcrunch
+      vlc
     ];
     shell = pkgs.fish;
   };
