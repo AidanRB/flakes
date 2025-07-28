@@ -19,7 +19,6 @@
     gnome-mines
     steam-run # terraria
 
-    vlc
     arduino-create-agent
     nixfmt-rfc-style
   ];

@@ -22,6 +22,7 @@
       android-tools
       scrcpy
       speedcrunch
+      vlc
     ];
     shell = pkgs.fish;
   };
