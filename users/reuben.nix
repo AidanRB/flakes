@@ -17,6 +17,7 @@
       vscode-fhs
       flameshot
       blender
+      bitwarden
       ente-auth
       sshfs
       android-tools
