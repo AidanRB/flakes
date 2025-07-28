@@ -17,6 +17,7 @@
       vscode-fhs
       flameshot
       blender
+      ente-auth
       sshfs
       android-tools
       scrcpy
