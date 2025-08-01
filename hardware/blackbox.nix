@@ -54,7 +54,6 @@
 
   users.users.aidan.packages = with pkgs; [
     # games
-    gamehub
     kdePackages.granatier
 
     # multimedia

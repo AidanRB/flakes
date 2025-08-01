@@ -8,7 +8,6 @@
   users.users.aidan.packages = with pkgs; [
     # games
     prismlauncher
-    gamehub
     osu-lazer-bin
     lutris
 
