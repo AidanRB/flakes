@@ -4,7 +4,7 @@
   imports =
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix # impure
-      ../UEFI.nix
+      ./UEFI.nix
     ];
 
   networking.hostName = "BHZ8VC3"; # Define your hostname.
