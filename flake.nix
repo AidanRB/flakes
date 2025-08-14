@@ -14,14 +14,19 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    copyparty = {
+      url = "github:9001/copyparty";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    inputs@{
+    {
       self,
       nixpkgs,
       home-manager,
-    # reuben,
+      copyparty,
     }:
     {
 
@@ -143,7 +148,11 @@
 
         base = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
+          specialArgs = {
+            inherit copyparty; # this feels like it shouldn't be necessary but here we are
+          };
           modules = [
+            copyparty.nixosModules.default
             ./hardware/base.nix
             ./general/kvm.nix
             ./desktops/gnome.nix

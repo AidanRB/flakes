@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, copyparty, ... }:
 
 {
   imports = [
@@ -6,6 +6,8 @@
     /etc/nixos/hardware-configuration.nix # impure
     ./UEFI.nix
   ];
+
+  nixpkgs.overlays = [ copyparty.overlays.default ];
 
   system.activationScripts = {
     jonathanfacl = {
@@ -220,6 +222,12 @@
           useACMEHost = "bennett";
           locations."/".proxyPass = "http://localhost:3002";
         };
+
+        "ls.bennett.place" = {
+          forceSSL = true;
+          useACMEHost = "bennett";
+          locations."/".proxyPass = "http://localhost:3210";
+        };
       };
     };
 
@@ -285,6 +293,33 @@
       };
       sslCertificate = "/var/lib/acme/bennett/fullchain.pem";
       sslCertificateKey = "/var/lib/acme/bennett/key.pem";
+    };
+
+    copyparty = {
+      enable = true;
+      settings = {
+        i = "0.0.0.0";
+        p = [ 3210 ];
+        z = true; # enable zeroconf
+        ed = true; # show dotfiles
+        rproxy = 1; # use nginx header for ip
+        http-only = true; # disable native https
+        #idp-... # enable keycloak integration
+        e2d = true; # enable up2k database for file search
+        e2dsa = true; # rescan all folders on startup
+        e2t = true; # enable metadata indexing/searching
+        e2ts = true; # enable scanning new files for metadata
+        au-vol = 100; # set audio volume to 100% by default
+      };
+
+      volumes = {
+        "backup" = {
+          path = "/backup";
+          access = {
+            r = "*";
+          };
+        };
+      };
     };
   };
 
