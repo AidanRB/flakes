@@ -316,7 +316,7 @@
       };
 
       volumes = {
-        "backup" = {
+        "/" = {
           path = "/backup";
           access = {
             r = "*";
