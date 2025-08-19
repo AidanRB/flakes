@@ -311,8 +311,6 @@
         #idp-... # enable keycloak integration
         e2d = true; # enable up2k database for file search
         e2dsa = true; # rescan all folders on startup
-        e2t = true; # enable metadata indexing/searching
-        e2ts = true; # enable scanning new files for metadata
         au-vol = 100; # set audio volume to 100% by default
         hist = "/var/lib/copyparty"; # set database location
       };
@@ -322,6 +320,17 @@
           path = "/backup";
           access = {
             r = "*";
+          };
+        };
+
+        "/audio" = {
+          path = "/backup/Audio";
+          access = {
+            r = "*";
+          };
+          flags = {
+            e2t = true; # enable metadata indexing/searching
+            e2ts = true; # enable scanning new files for metadata
           };
         };
       };
