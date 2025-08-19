@@ -245,6 +245,7 @@
           "jf.bennett.place" = "https://jf.bennett.place";
           "img.bennett.place" = "https://img.bennett.place";
           "sso.bennett.place" = "https://sso.bennett.place";
+          "ls.bennett.place" = "https://ls.bennett.place";
         };
       };
     };
