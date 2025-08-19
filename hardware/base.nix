@@ -323,7 +323,7 @@
           };
         };
 
-        "/audio" = {
+        "/Audio" = {
           path = "/backup/Audio";
           access = {
             r = "*";
