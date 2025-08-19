@@ -314,6 +314,7 @@
         e2t = true; # enable metadata indexing/searching
         e2ts = true; # enable scanning new files for metadata
         au-vol = 100; # set audio volume to 100% by default
+        hist = "/var/lib/copyparty"; # set database location
       };
 
       volumes = {
