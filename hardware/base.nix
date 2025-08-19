@@ -107,6 +107,7 @@
   environment.systemPackages = with pkgs; [
     cloudflared
     btop
+    ffmpeg # for copyparty
 
     # discord bot
     (python313.withPackages (ps: with ps; [ requests ]))
