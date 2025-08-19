@@ -106,7 +106,7 @@
     btop
 
     # discord bot
-    (python310.withPackages (ps: with ps; [ requests ]))
+    (python313.withPackages (ps: with ps; [ requests ]))
   ];
 
   services = {
