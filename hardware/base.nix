@@ -18,9 +18,12 @@
     };
   };
 
-  nix.gc = {
-    dates = "weekly";
-    options = "--delete-older-than 30d";
+  nix = {
+    gc = {
+      dates = "weekly";
+      options = "--delete-older-than 30d";
+    };
+    settings.trusted_users = [ "@wheel" ];
   };
   system.autoUpgrade = {
     operation = "switch";
