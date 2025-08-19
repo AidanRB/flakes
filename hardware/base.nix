@@ -23,7 +23,7 @@
       dates = "weekly";
       options = "--delete-older-than 30d";
     };
-    settings.trusted_users = [ "@wheel" ];
+    settings.trusted-users = [ "@wheel" ];
   };
   system.autoUpgrade = {
     operation = "switch";
