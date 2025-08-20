@@ -153,7 +153,7 @@
           };
           modules = [
             copyparty.nixosModules.default
-            ./hardware/base.nix
+            ./hardware/base/base.nix
             ./general/kvm.nix
             ./desktops/gnome.nix
             home-manager.nixosModules.home-manager

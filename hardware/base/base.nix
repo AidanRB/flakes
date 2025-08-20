@@ -3,8 +3,8 @@
 {
   imports = [
     # Include the results of the hardware scan.
-    /etc/nixos/hardware-configuration.nix # impure
-    ./UEFI.nix
+    ./base-hardware.nix
+    ../UEFI.nix
   ];
 
   nixpkgs.overlays = [ copyparty.overlays.default ];
