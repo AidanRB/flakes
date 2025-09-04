@@ -22,6 +22,7 @@
   boot = {
     # hibernation
     kernelParams = [ "resume_offset=13116672" ];
+    kernelPackages = pkgs.linuxPackages_latest;
     resumeDevice = "/dev/disk/by-label/nixos";
   };
 
