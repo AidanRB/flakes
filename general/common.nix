@@ -44,6 +44,9 @@
       "quiet"
       "splash"
     ];
+
+    # enable sysrq (REISUB)
+    kernel.sysctl."kernel.sysrq" = 1;
   };
 
   # Set your time zone.
