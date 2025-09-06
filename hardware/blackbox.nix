@@ -99,9 +99,6 @@
       ];
     };
 
-    # self-hosted chatgpt
-    # open-webui.enable = true;
-
     tailscale.enable = true;
     openssh.enable = true;
 
@@ -113,6 +110,11 @@
       };
     };
     ratbagd.enable = true;
+
+    pipewire = {
+      alsa.enable = true;
+      jack.enable = true;
+    };
 
     # disable suspending after wakeOnLan while sitting on the login screen
     displayManager.gdm.autoSuspend = false;
