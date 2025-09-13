@@ -4,7 +4,10 @@
   # Enable flakes, set up automatic updates from GitHub, storage optimization
   nix = {
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       auto-optimise-store = true;
     };
     gc = {
@@ -57,6 +60,21 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  # tailscale/tailscale#16966, can be removed after kernel is fixed
+  nixpkgs.overlays = [
+    (_: prev: {
+      tailscale = prev.tailscale.overrideAttrs (old: {
+        checkFlags = builtins.map (
+          flag:
+          if prev.lib.hasPrefix "-skip=" flag then
+            flag + "|^TestGetList$|^TestIgnoreLocallyBoundPorts$|^TestPoller$"
+          else
+            flag
+        ) old.checkFlags;
+      });
+    })
+  ];
+
   # List packages installed in system profile. To search, run:
   # $ nix search nixpkgs [term]
   environment.systemPackages = with pkgs; [
@@ -76,4 +94,3 @@
     ip = "ip --color=auto";
   };
 }
-
