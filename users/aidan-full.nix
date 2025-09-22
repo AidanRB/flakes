@@ -21,6 +21,7 @@
     libreoffice
     vlc
     resources
+    remmina
   ];
 
   programs = {
