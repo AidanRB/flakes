@@ -70,7 +70,6 @@
     # tools
     menulibre
     qflipper
-    dig
     gcolor3
 
     # astra monitor

@@ -11,6 +11,9 @@
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJWlqFWcRu5SYJN+aXPZC4JvL1TrkP05D1duF2QH+ofX"
     ];
+    packages = with pkgs; [
+      dig
+    ];
   };
 
   environment = {
