@@ -232,6 +232,12 @@
           useACMEHost = "bennett";
           locations."/".proxyPass = "http://localhost:3210";
         };
+
+        "ha.bennett.place" = {
+          forceSSL = true;
+          useACMEHost = "bennett";
+          locations."/".proxyPass = "http://localhost:8123";
+        };
       };
     };
 
@@ -246,6 +252,7 @@
           "img.bennett.place" = "https://img.bennett.place";
           "sso.bennett.place" = "https://sso.bennett.place";
           "ls.bennett.place" = "https://ls.bennett.place";
+          "ha.bennett.place" = "https://ha.bennett.place";
         };
       };
     };
@@ -372,9 +379,8 @@
       "/etc/localtime:/etc/localtime:ro"
     ];
     extraOptions = [
-      # "--device=/dev/ttyUSB0"
+      # "--device=/dev/ttyUSB0" # example for z-wave hub
       "--network=host"
-      # "--privileged"
     ];
   };
 
