@@ -236,7 +236,10 @@
         "ha.bennett.place" = {
           forceSSL = true;
           useACMEHost = "bennett";
-          locations."/".proxyPass = "http://localhost:8123";
+          locations."/" = {
+            proxyPass = "http://localhost:8123";
+            proxyWebsockets = true;
+          };
         };
       };
     };
