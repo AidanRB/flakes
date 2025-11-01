@@ -17,7 +17,7 @@
       vscode-fhs
       flameshot
       blender
-      bitwarden
+      bitwarden-desktop
       ente-auth
       sshfs
       android-tools

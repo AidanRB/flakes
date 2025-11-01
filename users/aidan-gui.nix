@@ -42,7 +42,7 @@ in
 
       speedcrunch
       flameshot
-      bitwarden
+      bitwarden-desktop
 
       gnomeExtensions.gsconnect
 
@@ -229,7 +229,7 @@ in
       xdg.autostart = {
         enable = true;
         entries = [
-          "${pkgs.bitwarden}/share/applications/bitwarden.desktop"
+          "${pkgs.bitwarden-desktop}/share/applications/bitwarden.desktop"
         ];
       };
     };
