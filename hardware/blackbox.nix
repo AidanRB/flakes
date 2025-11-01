@@ -69,7 +69,7 @@
 
     # tools
     menulibre
-    qflipper
+    qFlipper
     gcolor3
 
     # astra monitor
