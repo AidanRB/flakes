@@ -22,6 +22,7 @@
     vlc
     resources
     remmina
+    bluebubbles
   ];
 
   programs = {
