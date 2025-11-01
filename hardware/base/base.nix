@@ -1,4 +1,9 @@
-{ config, pkgs, copyparty, ... }:
+{
+  config,
+  pkgs,
+  copyparty,
+  ...
+}:
 
 {
   imports = [
@@ -241,6 +246,15 @@
             proxyWebsockets = true;
           };
         };
+
+        "zw.bennett.place" = {
+          forceSSL = true;
+          useACMEHost = "bennett";
+          locations."/" = {
+            proxyPass = "http://10.88.0.2:8091";
+            proxyWebsockets = true;
+          };
+        };
       };
     };
 
@@ -374,17 +388,32 @@
     };
   };
 
-  virtualisation.oci-containers.containers."homeassistant" = {
-    autoStart = true;
-    image = "ghcr.io/home-assistant/home-assistant:stable";
-    volumes = [
-      "home-assistant:/config"
-      "/etc/localtime:/etc/localtime:ro"
-    ];
-    extraOptions = [
-      # "--device=/dev/ttyUSB0" # example for z-wave hub
-      "--network=host"
-    ];
+  virtualisation.oci-containers.containers = {
+    "homeassistant" = {
+      autoStart = true;
+      image = "ghcr.io/home-assistant/home-assistant:stable";
+      volumes = [
+        "home-assistant:/config"
+        "/etc/localtime:/etc/localtime:ro"
+      ];
+      extraOptions = [
+        "--network=host"
+      ];
+    };
+
+    "zwave" = {
+      autoStart = true;
+      image = "zwavejs/zwave-js-ui";
+      volumes = [
+        "zwave-data:/usr/src/app/store"
+      ];
+      extraOptions = [
+        "--device=/dev/serial/by-id/usb-Zooz_800_Z-Wave_Stick_533D004242-if00"
+      ];
+      networks = [
+        "podman:ip=10.88.0.2"
+      ];
+    };
   };
 
   system.stateVersion = "22.05";
