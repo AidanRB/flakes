@@ -69,9 +69,10 @@
     };
     defaultGateway = "192.168.1.1";
     nameservers = [
+      "192.168.1.1"
       "172.64.36.1"
       "172.64.36.2"
-    ]; # Cloudflare
+    ]; # Cloudflare as backups
 
     firewall = {
       checkReversePath = "loose";
