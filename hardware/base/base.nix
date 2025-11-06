@@ -55,7 +55,7 @@
 
   networking = {
     hostName = "base"; # Define your hostname.
-    networkmanager.enable = false;
+    # networkmanager.enable = false;
     useDHCP = false;
     bridges."br0".interfaces = [ "enp1s0" ];
 
@@ -271,6 +271,7 @@
           "sso.bennett.place" = "https://sso.bennett.place";
           "ls.bennett.place" = "https://ls.bennett.place";
           "ha.bennett.place" = "https://ha.bennett.place";
+          "macmini.bennett.place" = "vnc://macmini.linux.contact:5900";
         };
       };
     };
