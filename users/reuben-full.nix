@@ -17,7 +17,6 @@
     pingus
     kdePackages.granatier
     gnome-mines
-    steam-run # terraria
 
     arduino-create-agent
     nixfmt-rfc-style

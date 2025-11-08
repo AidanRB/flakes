@@ -24,6 +24,7 @@
       scrcpy
       speedcrunch
       vlc
+      steam-run # terraria
     ];
     shell = pkgs.fish;
   };
