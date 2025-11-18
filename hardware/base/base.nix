@@ -271,7 +271,7 @@
           "sso.bennett.place" = "https://sso.bennett.place";
           "ls.bennett.place" = "https://ls.bennett.place";
           "ha.bennett.place" = "https://ha.bennett.place";
-          "macmini.bennett.place" = "vnc://macmini.linux.contact:5900";
+          "bluebubbles.bennett.place" = "http://macmini.linux.contact:1234";
         };
       };
     };
