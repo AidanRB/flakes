@@ -47,6 +47,7 @@
             ./desktops/gnome.nix
             home-manager.nixosModules.home-manager
             ./users/aidan-full.nix
+            ./users/aidan-gnome.nix
             ./general/common.nix
           ];
         };
@@ -70,6 +71,7 @@
             ./desktops/gnome.nix
             home-manager.nixosModules.home-manager
             ./users/aidan-full.nix
+            ./users/aidan-gnome.nix
             ./general/common.nix
           ];
         };
@@ -81,6 +83,7 @@
             ./desktops/gnome.nix
             home-manager.nixosModules.home-manager
             ./users/aidan-gui.nix
+            ./users/aidan-gnome.nix
             ./general/common.nix
           ];
         };
@@ -92,6 +95,7 @@
             ./desktops/gnome.nix
             home-manager.nixosModules.home-manager
             ./users/aidan-full.nix
+            ./users/aidan-gnome.nix
             ./general/common.nix
           ];
         };
@@ -127,6 +131,7 @@
             ./desktops/gnome.nix
             home-manager.nixosModules.home-manager
             ./users/aidan-full.nix
+            ./users/aidan-gnome.nix
             ./general/common.nix
           ];
         };
@@ -138,6 +143,7 @@
             ./desktops/gnome.nix
             home-manager.nixosModules.home-manager
             ./users/aidan-gui.nix
+            ./users/aidan-gnome.nix
             ./users/reuben-full.nix
             ./users/nicole.nix
             ./users/jonathan.nix
