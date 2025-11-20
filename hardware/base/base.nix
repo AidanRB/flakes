@@ -248,6 +248,15 @@
           };
         };
 
+        "bluebubbles.bennett.place" = {
+          forceSSL = true;
+          useACMEHost = "bennett";
+          locations."/" = {
+            proxyPass = "http://macmini.linux.contact:1234";
+            proxyWebsockets = true;
+          };
+        };
+
         "zw.bennett.place" = {
           forceSSL = true;
           useACMEHost = "bennett";
