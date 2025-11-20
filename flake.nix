@@ -95,7 +95,7 @@
             ./desktops/gnome.nix
             home-manager.nixosModules.home-manager
             ./users/aidan-full.nix
-            ./users/aidan-gnome.nix
+            ./users/aidan-hyprland.nix
             ./general/common.nix
           ];
         };
