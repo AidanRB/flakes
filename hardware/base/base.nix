@@ -2,6 +2,7 @@
   config,
   pkgs,
   copyparty,
+  lib,
   ...
 }:
 
@@ -370,6 +371,30 @@
           };
         };
       };
+    };
+
+    zigbee2mqtt = {
+      enable = true;
+      settings = {
+        serial = {
+          port = "tcp://192.168.1.75:6638";
+          adapter = "ember";
+        };
+        homeassistant = lib.mkForce true;
+        permit_join = true;
+        frontend = true;
+      };
+    };
+
+    mosquitto = {
+      enable = true;
+      listeners = [
+        {
+          acl = [ "pattern readwrite #" ];
+          omitPasswordAuth = true;
+          settings.allow_anonymous = true;
+        }
+      ];
     };
   };
 
