@@ -7,7 +7,7 @@
   };
 
   users.users.aidan.packages = with pkgs; [
-    wofi
+    walker
     playerctl
   ];
 
