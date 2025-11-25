@@ -19,6 +19,17 @@
       url = "github:9001/copyparty";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    elephant = {
+      url = "github:abenz1267/elephant";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    walker = {
+      url = "github:abenz1267/walker";
+      inputs.elephant.follows = "elephant";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -27,6 +38,8 @@
       nixpkgs,
       home-manager,
       copyparty,
+      elephant,
+      walker,
     }:
     {
 
@@ -95,6 +108,7 @@
             ./desktops/gnome.nix
             home-manager.nixosModules.home-manager
             ./users/aidan-full.nix
+            walker.nixosModules.default
             ./users/aidan-hyprland.nix
             ./general/common.nix
           ];
