@@ -9,6 +9,7 @@
   };
 
   users.users.aidan.packages = with pkgs; [
+    waybar
     walker
     playerctl
     hyprpaper
@@ -16,7 +17,6 @@
   ];
 
   programs = {
-    waybar.enable = true;
     walker.enable = true;
     hyprlock.enable = true;
   };
