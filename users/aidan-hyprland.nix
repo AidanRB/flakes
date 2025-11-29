@@ -9,9 +9,10 @@
   };
 
   users.users.aidan.packages = with pkgs; [
-    waybar
+    hyprpanel
     walker
     playerctl
+    hyprsunset
     hyprpaper
     gpu-screen-recorder
   ];
@@ -28,6 +29,7 @@
 
   fonts.packages = with pkgs; [
     font-awesome
+    nerd-fonts.symbols-only
   ];
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -36,5 +38,7 @@
     wayland.windowManager.hyprland.plugins = with pkgs; [
       hyprlandPlugins.hyprexpo
     ];
+
+    programs.hyprpanel.enable = true;
   };
 }
