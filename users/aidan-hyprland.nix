@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
-  # imports = [walker.nixosModules.default];
+  imports = [inputs.walker.nixosModules.default];
 
   programs.hyprland = {
     enable = true;
@@ -10,7 +10,6 @@
 
   users.users.aidan.packages = with pkgs; [
     hyprpanel
-    walker
     playerctl
     hyprsunset
     hyprpaper
@@ -18,7 +17,9 @@
   ];
 
   programs = {
-    walker.enable = true;
+    walker = {
+      enable = true;
+    };
     hyprlock.enable = true;
   };
 

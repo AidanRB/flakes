@@ -39,8 +39,8 @@
       home-manager,
       copyparty,
       elephant,
-      walker,
-    }:
+      ...
+    } @ inputs:
     {
 
       nixosConfigurations = {
@@ -103,12 +103,14 @@
 
         blackbox = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
+          specialArgs = {
+            inherit inputs;
+          };
           modules = [
             ./hardware/blackbox.nix
             ./desktops/gnome.nix
             home-manager.nixosModules.home-manager
             ./users/aidan-full.nix
-            walker.nixosModules.default
             ./users/aidan-hyprland.nix
             ./general/common.nix
           ];
