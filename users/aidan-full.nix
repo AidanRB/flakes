@@ -23,6 +23,7 @@
     resources
     remmina
     bluebubbles
+    blender
   ];
 
   programs = {
