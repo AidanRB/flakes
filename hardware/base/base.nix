@@ -266,6 +266,15 @@
             proxyWebsockets = true;
           };
         };
+
+        "zb.bennett.place" = {
+          forceSSL = true;
+          useACMEHost = "bennett";
+          locations."/" = {
+            proxyPass = "http://localhost:8080";
+            proxyWebsockets = true;
+          };
+        };
       };
     };
 
