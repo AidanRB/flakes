@@ -1,8 +1,6 @@
 { pkgs, inputs, ... }:
 
 {
-  imports = [inputs.walker.nixosModules.default];
-
   programs.hyprland = {
     enable = true;
     withUWSM = true;
@@ -14,18 +12,17 @@
     hyprsunset
     hyprpaper
     gpu-screen-recorder
+    walker
   ];
 
   programs = {
-    walker = {
-      enable = true;
-    };
     hyprlock.enable = true;
   };
 
   services = {
     playerctld.enable = true;
     hypridle.enable = true;
+    elephant.enable = true;
   };
 
   fonts.packages = with pkgs; [

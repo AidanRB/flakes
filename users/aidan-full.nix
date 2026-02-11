@@ -12,7 +12,7 @@
     lutris
 
     vscode-fhs
-    nixfmt-rfc-style
+    nixfmt
     helvum
     nmap
     nextcloud-client

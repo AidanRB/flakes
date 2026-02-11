@@ -19,6 +19,6 @@
     gnome-mines
 
     arduino-create-agent
-    nixfmt-rfc-style
+    nixfmt
   ];
 }

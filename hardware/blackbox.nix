@@ -117,6 +117,8 @@
 
     # disable suspending after wakeOnLan while sitting on the login screen
     displayManager.gdm.autoSuspend = false;
+
+    flatpak.enable = true;
   };
 
   system.stateVersion = "23.11";
