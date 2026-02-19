@@ -13,6 +13,8 @@
     hyprpaper
     gpu-screen-recorder
     walker
+    wiremix
+    waybar
   ];
 
   programs = {
