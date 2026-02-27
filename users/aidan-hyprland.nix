@@ -15,6 +15,7 @@
     walker
     wiremix
     waybar
+    swaynotificationcenter
   ];
 
   programs = {
