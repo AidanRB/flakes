@@ -16,6 +16,7 @@
     wiremix
     waybar
     swaynotificationcenter
+    file-roller
   ];
 
   programs = {
