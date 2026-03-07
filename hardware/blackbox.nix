@@ -27,7 +27,7 @@
   };
 
   # hibernate after 30m asleep in suspend-then-hibernate
-  systemd.sleep.extraConfig = "HibernateDelaySec=30m";
+  systemd.sleep.settings.Sleep.HibernateDelaySec = "30m";
 
   networking = {
     hostName = "blackbox";

@@ -13,7 +13,7 @@
 
     vscode-fhs
     nixfmt
-    helvum
+    crosspipe
     nmap
     nextcloud-client
     qownnotes
