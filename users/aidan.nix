@@ -6,6 +6,7 @@
     description = "Aidan Bennett";
     extraGroups = [
       "wheel"
+      "dialout"
     ];
     shell = pkgs.fish;
     openssh.authorizedKeys.keys = [

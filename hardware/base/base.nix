@@ -275,6 +275,15 @@
             proxyWebsockets = true;
           };
         };
+
+        "esp.bennett.place" = {
+          forceSSL = true;
+          useACMEHost = "bennett";
+          locations."/" = {
+            proxyPass = "http://10.88.0.3:6052";
+            proxyWebsockets = true;
+          };
+        };
       };
     };
 
@@ -457,6 +466,18 @@
       ];
       networks = [
         "podman:ip=10.88.0.2"
+      ];
+    };
+
+    "esphome" = {
+      autoStart = true;
+      image = "ghcr.io/esphome/esphome";
+      volumes = [
+        "esphome-data:/config"
+        "/etc/localtime:/etc/localtime:ro"
+      ];
+      networks = [
+        "podman:ip=10.88.0.3"
       ];
     };
   };
