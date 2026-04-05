@@ -479,6 +479,8 @@
       networks = [
         "podman:ip=10.88.0.3"
       ];
+      environment.ESPHOME_DASHBOARD_USE_PING = "true";
+      capabilities.NET_RAW = true;
     };
   };
 
