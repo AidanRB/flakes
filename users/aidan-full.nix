@@ -24,6 +24,7 @@
     remmina
     bluebubbles
     blender
+    openscad-unstable
   ];
 
   programs = {
