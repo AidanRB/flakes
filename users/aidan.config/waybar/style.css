@@ -1,0 +1,62 @@
+#waybar {
+  font-family: 'Montserrat', sans-serif;
+  background: rgba(20, 20, 20, .8);
+  color: #ddd;
+  font-weight: 700;
+}
+
+window#waybar>box {
+  padding-right: 5px;
+}
+
+#workspaces button {
+  box-shadow: none;
+  padding: 2px 8px;
+  margin: 0 4px 4px 4px;
+  border-radius: 0 0 4px 4px;
+  transition: all 0s;
+  border: none;
+}
+
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  background: rgba(255, 255, 255, .1);
+  border: none;
+  padding: 2px 8px;
+  margin: 0 4px 4px 4px;
+}
+
+#workspaces button:hover>widget>box {
+  box-shadow: 3px 3px 0 3px black;
+}
+
+#workspaces button.visible {
+  background: rgba(255, 255, 255, .1);
+}
+
+#workspaces .workspace-label {
+  color: #ddd;
+}
+
+#systemd-failed-units {
+  color: #d22;
+}
+
+#tray menu {
+  background: #222;
+  color: #ddd;
+  font-weight: 500;
+}
+
+#bluetooth.off {
+  color: #888;
+}
+
+#bluetooth.on {
+  color: #0083fd
+}
+
+#custom-notification {
+  font-family: "NotoSansMono Nerd Font";
+}
