@@ -1,0 +1,37 @@
+name = "power"
+name_pretty = "Power Menu"
+icon = "system-shutdown"
+
+[[entries]]
+text = "All Options"
+[[entries.actions]]
+"suspend" = "hyprlock & sleep 2; systemctl suspend-then-hibernate"
+"poweroff" = "poweroff"
+
+[[entries]]
+text = "Sleep"
+keywords = ["sleep", "suspend"]
+actions = { "suspend" = "hyprlock & sleep 2; systemctl suspend-then-hibernate" }
+icon = "preferences-desktop-screensaver"
+
+[[entries]]
+text = "Power Off"
+keywords = ["poweroff", "shutdown"]
+actions = { "poweroff" = "poweroff" }
+icon = "system-shutdown"
+
+[[entries]]
+text = "Reboot"
+keywords = ["restart"]
+actions = { "reboot" = "reboot" }
+icon = "system-reboot"
+
+[[entries]]
+text = "Hibernate"
+actions = { "hibernate" = "hyprlock & sleep 2; systemctl hibernate" }
+icon = "media-playback-pause"
+
+[[entries]]
+text = "Lock"
+actions = { "lock" = "hyprlock" }
+icon = "system-lock-screen"

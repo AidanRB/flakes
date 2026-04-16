@@ -1,0 +1,1 @@
+ignored_providers = ['bookmarks', 'snippets', 'todo']
