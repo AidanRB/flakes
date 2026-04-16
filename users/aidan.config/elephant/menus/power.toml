@@ -4,9 +4,12 @@ icon = "system-shutdown"
 
 [[entries]]
 text = "All Options"
-[[entries.actions]]
-"suspend" = "hyprlock & sleep 2; systemctl suspend-then-hibernate"
+[entries.actions]
+"hibernate" = "hyprlock & sleep 2; systemctl hibernate"
+"lock" = "hyprlock"
 "poweroff" = "poweroff"
+"reboot" = "reboot"
+"suspend" = "hyprlock & sleep 2; systemctl suspend-then-hibernate"
 
 [[entries]]
 text = "Sleep"
@@ -18,7 +21,7 @@ icon = "preferences-desktop-screensaver"
 text = "Power Off"
 keywords = ["poweroff", "shutdown"]
 actions = { "poweroff" = "poweroff" }
-icon = "system-shutdown"
+icon = "media-playback-stop"
 
 [[entries]]
 text = "Reboot"

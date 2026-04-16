@@ -221,3 +221,11 @@ bookmarks = [
   { action = "create", bind = "ctrl a", after = "AsyncClearReload" },
   { action = "search", bind = "ctrl a", after = "AsyncClearReload" },
 ]
+
+"menus:power" = [
+  { action = "hibernate", bind = "ctrl h", after = "Close" },
+  { action = "lock", bind = "ctrl l", after = "Close" },
+  { action = "poweroff", bind = "ctrl p", after = "Close" },
+  { action = "reboot", bind = "ctrl r", after = "Close" },
+  { action = "suspend", bind = "ctrl s", after = "Close" },
+]
