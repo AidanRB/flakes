@@ -18,6 +18,7 @@
     hyprpaper
     gpu-screen-recorder
     walker
+    elephant
     wiremix
     waybar
     swaynotificationcenter
