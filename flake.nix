@@ -73,6 +73,7 @@
             home-manager.nixosModules.home-manager
             ./users/aidan-hyprland.nix
             ./users/aidan-gnome.nix
+            ./users/aidan.nix
             ./general/common.nix
           ];
         };
