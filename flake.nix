@@ -71,7 +71,7 @@
             ./hardware/J8YPRL3.nix
             ./desktops/gnome.nix
             home-manager.nixosModules.home-manager
-            ./users/aidan-full.nix
+            ./users/aidan-hyprland.nix
             ./users/aidan-gnome.nix
             ./general/common.nix
           ];
