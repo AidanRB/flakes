@@ -171,8 +171,18 @@
     };
 
     actual = {
-      enable = true;
+      # enable = true;
       settings.port = 3002;
+    };
+
+    firefly-iii = {
+      enable = true;
+      enableNginx = true;
+      virtualHost = "bgt.bennett.place";
+      settings = {
+        APP_URL = "https://bgt.bennett.place";
+        APP_KEY_FILE = "/var/src/secrets/firefly_app_key";
+      };
     };
 
     nginx = {
@@ -194,6 +204,11 @@
         };
 
         ${config.services.nextcloud.hostName} = {
+          forceSSL = true;
+          useACMEHost = "bennett";
+        };
+
+        ${config.services.firefly-iii.virtualHost} = {
           forceSSL = true;
           useACMEHost = "bennett";
         };
@@ -228,11 +243,11 @@
           };
         };
 
-        "bgt.bennett.place" = {
-          forceSSL = true;
-          useACMEHost = "bennett";
-          locations."/".proxyPass = "http://localhost:3002";
-        };
+        # "bgt.bennett.place" = {
+        #   forceSSL = true;
+        #   useACMEHost = "bennett";
+        #   locations."/".proxyPass = "http://localhost:3002";
+        # };
 
         "ls.bennett.place" = {
           forceSSL = true;
@@ -422,7 +437,9 @@
     certs.bennett = {
       domain = "*.bennett.place";
       dnsProvider = "cloudflare";
-      credentialsFile = "/var/src/secrets/acme_cloudflare_auth";
+      credentialFiles = {
+        "CLOUDFLARE_SECRETS_FILE" = "/var/src/secrets/acme_cloudflare_auth";
+      };
       group = config.services.nginx.group;
     };
   };
