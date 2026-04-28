@@ -185,6 +185,17 @@
       };
     };
 
+    firefly-iii-data-importer = {
+      enable = true;
+      enableNginx = true;
+      virtualHost = "imp-bgt.bennett.place";
+      settings = {
+        LOG_CHANNEL = "syslog";
+        FIREFLY_III_ACCESS_TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMmMzZTc4ODE3YmY1MjcxNTNjOGUxMTUzNWE4ZWM5YTIzZDk3OGZlYjZmODk1NDVjMmRhN2Q3ZGJmNTdkNGU5MzA3MWMwNDc1NmE4ODJjMmEiLCJpYXQiOjE3NzcyMjM1MzkuMTI2MDAzLCJuYmYiOjE3NzcyMjM1MzkuMTI2MDA2LCJleHAiOjE4MDg3NTk1MzkuMDg3MTExLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.lw0xqVXbQChQAKRz49TdYsf0N5lVGmolx5GV3ltdweNKXhPpBJYO4wEX8JGElguPX3nFuhNKYe7OObpByhjwnxhy1VhxFY8ltzFG408MSSzYq8QMUaXpQE-9Fo-vgi0eHVtq3md-l5n_6nzUt9V3uXHvZAnDqPFcstmqfwWkoUxUC8xAN0xJeBcbboV2i1Tj9uawIuvAvVYU8-latLyGvNozHaBHORTwrZAdSeFaF499tiBll5nRgC4reqN4F3yZLISp4d9bpMtQ9QLcuASyTBkplDE4uNee_MYBl4XKCn9zuUrJrq7vQ87RS_iR4UosaIhomf-O3igeUJL_fLNiwvO4vaWdW5cD11wXf48t9uphUPJj-B67DmmLuL1grgGzsvcWEFLRYXdOzPdFVLNLHi2Q_AIsQ51HhaNtthgfBdDpWN9u6tk8H87FIol3as5YYiE7mXoU3ViEajOfnk9hYj40dtG4YgdBf4ZOTfwl142WRNVir3cDN4G6Lsl7WpPHZZPc19CCIy9KuH81hP3PmV9oZUIoUZ72tz3q_Chi_36JemNGCaVxzVgsxm6AB6WMfxInAZ0jfFYYcufGC5DFu59igDIGH-BTFu8ccoV4pBHMzB-3hWEqvtkflSHnGMOQpOgU0x6MZsGG-8DQ8cN7mnlQMzXHE71seQQ8_zu6NzU";
+        FIREFLY_III_URL = "https://bgt.bennett.place";
+      };
+    };
+
     nginx = {
       recommendedGzipSettings = true;
       recommendedOptimisation = true;
