@@ -224,6 +224,11 @@
           useACMEHost = "bennett";
         };
 
+        ${config.services.firefly-iii-data-importer.virtualHost} = {
+          forceSSL = true;
+          useACMEHost = "bennett";
+        };
+
         "jf.bennett.place" = {
           forceSSL = true;
           useACMEHost = "bennett";
