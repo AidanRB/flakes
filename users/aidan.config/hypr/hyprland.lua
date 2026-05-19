@@ -299,7 +299,7 @@ hl.bind("SUPER + CTRL + m",
   hl.dsp.exec_cmd("brave --profile-directory=Default --app-id=cinhimbnkkaeohfgghhklpknlkffjgod"))
 hl.bind("SUPER + CTRL + y",
   hl.dsp.exec_cmd("brave --profile-directory=Default --app-id=agimnkijcaahngcdmfeangaknmldooml"))
-hl.bind("SUPER + CTRL + DELETE", hl.dsp.exec_cmd("walker --provider menus power"))
+hl.bind("CTRL + ALT + DELETE", hl.dsp.exec_cmd("walker --provider menus power"))
 hl.bind("PRINT", hl.dsp.exec_cmd("XDG_CURRENT_DESKTOP=sway flameshot gui"))
 hl.bind("SUPER + PRINT", hl.dsp.exec_cmd("pkill -SIGUSR1 -f gpu-screen-recorder"))
 hl.bind("SUPER + f", hl.dsp.exec_cmd("nautilus"))
