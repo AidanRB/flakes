@@ -284,9 +284,6 @@ hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"))
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"))
 
 -- binds: launchers
-hl.bind("SUPER + SUPER_L", hl.dsp.exec_cmd("walker"), {
-  release = true,
-})
 hl.bind("SUPER + SPACE", hl.dsp.exec_cmd("walker"))
 hl.bind("SUPER + SHIFT + v", hl.dsp.exec_cmd("walker --provider clipboard"))
 hl.bind("SUPER + l", hl.dsp.exec_cmd("hyprlock"))
