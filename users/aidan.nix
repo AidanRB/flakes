@@ -28,7 +28,7 @@
   };
 
   home-manager = {
-    backupFileExtension = ".old";
+    backupFileExtension = "old";
 
     users.aidan = {
       programs = {

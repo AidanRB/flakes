@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, lib, ... }:
 
 {
   system.activationScripts.copyConfig = {
@@ -43,4 +43,6 @@
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  home-manager.users.aidan.gtk.enable = lib.mkForce false;
 }
