@@ -64,8 +64,8 @@ hl.config({
 
     blur = {
       enabled = true,
-      size = 3,
-      passes = 1,
+      size = 6,
+      passes = 2,
       vibrancy = 0.1696,
     },
 
@@ -110,7 +110,6 @@ hl.config({
     disable_hyprland_logo = true,
     background_color = "rgb(000000)",
     focus_on_activate = true, -- notification fix
-    session_lock_xray = true,
   },
 
   cursor = {

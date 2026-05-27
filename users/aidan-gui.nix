@@ -36,11 +36,12 @@
           window-padding-x = 6;
           gtk-single-instance = true;
           scrollback-limit = 100000000;
-          background-opacity = 0.9;
+          background-opacity = 0.7;
         };
         themes = {
           kgx = {
-            background = "1f1f1f";
+            # background = "1f1f1f";
+            background = "000000";
             cursor-color = "ffffff";
             foreground = "ffffff";
             palette = [
