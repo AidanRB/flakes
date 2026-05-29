@@ -453,9 +453,7 @@
     certs.bennett = {
       domain = "*.bennett.place";
       dnsProvider = "cloudflare";
-      credentialFiles = {
-        "CLOUDFLARE_SECRETS_FILE" = "/var/src/secrets/acme_cloudflare_auth";
-      };
+      environmentFile = "/var/src/secrets/acme_cloudflare_auth";
       group = config.services.nginx.group;
     };
   };
