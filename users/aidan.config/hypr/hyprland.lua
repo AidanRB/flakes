@@ -57,6 +57,10 @@ hl.config({
     resize_on_border = true,
     allow_tearing = true,
     layout = dwindle,
+    snap = {
+      -- note to future self: it's for the floating work rdp window
+      enabled = true,
+    },
   },
 
   decoration = {
