@@ -25,6 +25,7 @@
       speedcrunch
       vlc
       steam-run # terraria
+      crosspipe
     ];
     shell = pkgs.fish;
   };
