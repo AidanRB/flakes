@@ -17,7 +17,6 @@
       vscode-fhs
       flameshot
       blender
-      bitwarden-desktop
       ente-auth
       sshfs
       android-tools
@@ -25,6 +24,7 @@
       speedcrunch
       vlc
       steam-run # terraria
+      crosspipe
     ];
     shell = pkgs.fish;
   };
