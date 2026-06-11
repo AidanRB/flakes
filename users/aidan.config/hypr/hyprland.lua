@@ -406,6 +406,14 @@ hl.layer_rule({
 })
 
 hl.layer_rule({
+  name = "notification panel entry",
+  match = {
+    namespace = "swaync-control-center",
+  },
+  animation = "slide right",
+})
+
+hl.layer_rule({
   name = "wallpaper entry",
   match = {
     namespace = "hyprpaper",
