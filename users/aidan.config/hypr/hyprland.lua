@@ -414,6 +414,14 @@ hl.layer_rule({
 })
 
 hl.layer_rule({
+  name = "notification entry",
+  match = {
+    namespace = "swaync-notification-window",
+  },
+  animation = "slide right",
+})
+
+hl.layer_rule({
   name = "wallpaper entry",
   match = {
     namespace = "hyprpaper",
