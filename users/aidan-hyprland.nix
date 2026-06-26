@@ -40,7 +40,20 @@
     nerd-fonts.symbols-only
   ];
 
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  # flameshot stuff
+  xdg.portal = {
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gtk
+    ];
+    config.common.default = [
+      "hyprland"
+      "gtk"
+    ];
+  };
+  environment.systemPackages = [
+    pkgs.grim
+  ];
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
