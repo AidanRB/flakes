@@ -9,7 +9,7 @@
     # games
     prismlauncher
     osu-lazer-bin
-    # lutris # using this for rayman, commenting it out because it's broken atm
+    lutris # using this for rayman
 
     vscode-fhs
     nixfmt
