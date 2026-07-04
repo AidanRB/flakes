@@ -6,15 +6,6 @@
     ./UEFI.nix
   ];
 
-  fileSystems = {
-    "/".options = [ "compress=zstd" ];
-    "/home".options = [ "compress=zstd" ];
-    "/nix".options = [
-      "compress=zstd"
-      "noatime"
-    ];
-  };
-
   networking.hostName = "ABF-GVGQMC2";
 
   services = {
