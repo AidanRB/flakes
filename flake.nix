@@ -173,6 +173,16 @@
             ./general/common.nix
           ];
         };
+
+        ABF-GVGQMC2 = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hardware/ABF-GVGQMC2.nix
+            ./desktops/gnome.nix
+            ./users/elena.nix
+            ./general/common.nix
+          ];
+        };
       };
     };
 }
