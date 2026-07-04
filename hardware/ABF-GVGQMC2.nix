@@ -25,9 +25,5 @@
     printing.enable = true;
   };
 
-  users.users.aidan.packages = with pkgs; [
-    vscode-fhs
-  ];
-
-  system.stateVersion = "25.05";
+  system.stateVersion = "23.05";
 }
