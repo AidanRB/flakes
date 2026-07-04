@@ -25,5 +25,7 @@
     printing.enable = true;
   };
 
+  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+
   system.stateVersion = "23.05";
 }
