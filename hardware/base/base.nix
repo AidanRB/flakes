@@ -445,6 +445,23 @@
         }
       ];
     };
+
+    wyoming = {
+      faster-whisper.servers.base = {
+        enable = true;
+        zeroconf.enable = true;
+        uri = "tcp://0.0.0.0:10300";
+        model = "tiny.en";
+        language = "en";
+      };
+
+      piper.servers.base = {
+        enable = true;
+        zeroconf.enable = true;
+        uri = "tcp://0.0.0.0:10200";
+        voice = "en_US-lessac-high";
+      };
+    };
   };
 
   security.acme = {
