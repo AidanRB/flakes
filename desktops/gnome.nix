@@ -11,7 +11,6 @@
   # Remove packages I don't want
   environment.gnome.excludePackages = lib.mkDefault (with pkgs; [
     gnome-tour
-    gnome-photos
     epiphany
     geary
     gnome-maps

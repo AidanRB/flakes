@@ -165,6 +165,7 @@
           modules = [
             copyparty.nixosModules.default
             ./hardware/base/base.nix
+            ./hardware/base/home-assistant.nix
             ./general/kvm.nix
             ./desktops/gnome.nix
             home-manager.nixosModules.home-manager
