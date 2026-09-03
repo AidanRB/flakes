@@ -10,7 +10,7 @@
   networking = {
     firewall = {
       allowedTCPPorts = [
-        8124
+        # 8124 # going to start switching to home-assistant native nixos module
       ];
     };
   };
