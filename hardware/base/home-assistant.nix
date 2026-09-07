@@ -56,6 +56,47 @@
       };
     };
 
+    # home-assistant = {
+    #   enable = true;
+    #   extraComponents = [
+    #     # Components required to complete the onboarding
+    #     "analytics"
+    #     "google_translate"
+    #     "met"
+    #     "radio_browser"
+    #     "shopping_list"
+    #     # Recommended for fast zlib compression
+    #     # https://www.home-assistant.io/integrations/isal
+    #     "isal"
+    #     "esphome"
+    #     "zwave_js"
+    #     "homekit_controller"
+    #     "nws"
+    #     "smlight"
+    #     "tuya"
+    #     "unifi"
+    #     "wyoming"
+    #   ];
+    #   customComponents = [
+    #     pkgs.home-assistant-custom-components.tuya_local
+    #   ];
+    #   extraPackages = python3Packages: with python3Packages; [
+    #     async-upnp-client
+    #     aiousbwatcher
+    #     aiodhcpwatcher
+    #     av
+    #     wakeonlan
+    #     go2rtc-client
+    #     pychromecast
+    #     pyipp
+    #     # pyecobee
+    #   ];
+    #   # opt-out from declarative configuration management
+    #   config = null;
+    #   configDir = "/var/lib/hass";
+    #   lovelaceConfig = null;
+    # };
+
     cloudflared = {
       enable = true;
       tunnels."home" = {
