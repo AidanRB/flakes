@@ -32,7 +32,7 @@
   programs.steam.enable = true;
 
   home-manager = {
-    backupFileExtension = ".old";
+    backupFileExtension = "old";
 
     users.reuben = {
       gtk = {

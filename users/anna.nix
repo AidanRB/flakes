@@ -21,7 +21,7 @@
   };
 
   home-manager = {
-    backupFileExtension = ".old";
+    backupFileExtension = "old";
 
     users.anna = {
       programs = {
