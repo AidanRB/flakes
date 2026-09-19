@@ -137,6 +137,7 @@
             home-manager.nixosModules.home-manager
             ./users/aidan-full.nix
             ./users/aidan-gnome.nix
+            ./users/reuben.nix
             ./general/common.nix
           ];
         };
