@@ -5,13 +5,13 @@
     # Add nixpkgs unstable as the default source for packages
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
-    # reuben = {
-    #   url = "github:rtbennett/flakes";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
     home-manager = {
       url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -26,9 +26,10 @@
       self,
       nixpkgs,
       home-manager,
+      nix-index-database,
       copyparty,
       ...
-    } @ inputs:
+    }@inputs:
     {
 
       nixosConfigurations = {
@@ -99,6 +100,15 @@
             ./hardware/blackbox.nix
             ./desktops/gnome.nix
             home-manager.nixosModules.home-manager
+            nix-index-database.nixosModules.default
+            {
+              home-manager.users.aidan = {
+                imports = [
+                  nix-index-database.homeModules.default
+                ];
+                programs.nix-index.enable = true;
+              };
+            }
             ./users/aidan-full.nix
             ./users/aidan-hyprland.nix
             ./general/common.nix

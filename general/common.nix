@@ -87,7 +87,6 @@
 
   programs = {
     fish.enable = true;
-    # command-not-found.enable = true;
   };
 
   environment.shellAliases = {
