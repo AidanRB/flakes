@@ -136,6 +136,13 @@
 
     syncthing.enable = true;
 
+    hermes-agent = {
+      enable = true;
+      backend.mode = "dashboard";
+      settings.dashboard.public_url = "https://ai.bennett.place";
+      environmentFiles = [ "/var/src/secrets/hermes-env" ];
+    };
+
     jellyfin = {
       enable = true;
     };
@@ -258,6 +265,15 @@
           };
         };
 
+        "ai.bennett.place" = {
+          forceSSL = true;
+          useACMEHost = "bennett";
+          locations."/" = {
+            proxyPass = "http://127.0.0.1:9119";
+            proxyWebsockets = true;
+          };
+        };
+
         "ls.bennett.place" = {
           forceSSL = true;
           useACMEHost = "bennett";
@@ -284,6 +300,7 @@
           "nc.bennett.place" = "https://nc.bennett.place";
           "jf.bennett.place" = "https://jf.bennett.place";
           "img.bennett.place" = "https://img.bennett.place";
+          "ai.bennett.place" = "https://ai.bennett.place";
           "sso.bennett.place" = "https://sso.bennett.place";
           "ls.bennett.place" = "https://ls.bennett.place";
           "bluebubbles.bennett.place" = "http://macmini.linux.contact:1234";
