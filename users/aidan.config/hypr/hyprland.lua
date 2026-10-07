@@ -388,6 +388,14 @@ hl.window_rule({
 
 hl.window_rule({
   match = {
+    class = "bitwarden",
+  },
+  float = true,
+  size = {750,775},
+})
+
+hl.window_rule({
+  match = {
     class = "com.wiremix",
   },
   float = true,
