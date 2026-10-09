@@ -20,10 +20,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hermes-agent = {
-      url = "github:NousResearch/hermes-agent";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -33,7 +29,6 @@
       home-manager,
       nix-index-database,
       copyparty,
-      hermes-agent,
       ...
     }@inputs:
     {
@@ -181,7 +176,6 @@
           };
           modules = [
             copyparty.nixosModules.default
-            hermes-agent.nixosModules.default
             ./hardware/base/base.nix
             ./hardware/base/home-assistant.nix
             ./general/kvm.nix

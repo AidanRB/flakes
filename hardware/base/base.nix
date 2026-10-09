@@ -136,13 +136,6 @@
 
     syncthing.enable = true;
 
-    hermes-agent = {
-      enable = true;
-      backend.mode = "dashboard";
-      settings.dashboard.public_url = "https://ai.bennett.place";
-      environmentFiles = [ "/var/src/secrets/hermes-env" ];
-    };
-
     jellyfin = {
       enable = true;
     };
@@ -419,6 +412,26 @@
         in
         "${python.interpreter} /home/aidan/Documents/highlights/highlights.py";
       Restart = "always";
+    };
+  };
+
+  virtualisation.oci-containers = {
+    backend = "podman";
+    containers.hermes-agent = {
+      image = "nousresearch/hermes-agent:latest";
+      pull = "newer";
+      cmd = [ "gateway" "run" ];
+      environmentFiles = [ "/var/src/secrets/hermes-env" ];
+      environment = {
+        HERMES_DASHBOARD = "1";
+        HERMES_DASHBOARD_HOST = "127.0.0.1";
+        HERMES_DASHBOARD_PORT = "9119";
+        HERMES_DASHBOARD_PUBLIC_URL = "https://ai.bennett.place";
+      };
+      extraOptions = [ "--network=host" ];
+      volumes = [
+        "/var/lib/hermes:/opt/data"
+      ];
     };
   };
 
