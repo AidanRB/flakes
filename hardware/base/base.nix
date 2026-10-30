@@ -156,8 +156,6 @@
       https = true;
       configureRedis = true;
       config = {
-        adminuser = "nextcloud";
-        adminpassFile = "/var/lib/nextcloud/adminpass";
         dbtype = "sqlite";
       };
       settings = {
