@@ -33,7 +33,8 @@
     supportedFilesystems = [ "ntfs" ];
 
     # enable hibernation
-    initrd.systemd.enable = true;
+    # "Scripted initrd has been removed." need to find a fix for hibernation
+    #initrd.systemd.enable = true;
 
     # boot animation
     plymouth = {
