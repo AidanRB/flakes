@@ -123,7 +123,6 @@ hl.config({
   -- https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/#config
   dwindle = {
     preserve_split = true,
-    special_scale_factor = 0.9,
     precise_mouse_move = true,
   },
 })
