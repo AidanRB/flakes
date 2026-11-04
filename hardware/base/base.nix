@@ -151,7 +151,7 @@
 
     nextcloud = {
       enable = true;
-      package = pkgs.nextcloud33;
+      package = pkgs.nextcloud35;
       hostName = "nc.bennett.place";
       https = true;
       configureRedis = true;
