@@ -97,7 +97,7 @@ hl.config({
       font_weight_active = 700,
       font_size = 12,
       indicator_height = 20,
-      indicator_gap = -17,
+      -- indicator_gap = -17,
       rounding = 6,
       round_only_edges = true,
       text_color = "rgb(ffffff)",
