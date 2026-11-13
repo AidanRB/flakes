@@ -8,6 +8,7 @@
       "networkmanager"
     ];
     packages = with pkgs; [
+      brave
       google-chrome
       flameshot
       firefox
@@ -26,7 +27,6 @@
       kobodeluxe
       zaz
       lbreakout2
-      
     ];
   };
 
