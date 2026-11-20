@@ -34,7 +34,7 @@ hl.on("hyprland.start", function()
   hl.exec_cmd("kdeconnect-indicator")
   hl.exec_cmd("systemctl --user start hyprpolkitagent")
   hl.exec_cmd("discord")
-  hl.exec_cmd("openrgb --startminimized")
+  -- hl.exec_cmd("openrgb --startminimized")
 end)
 
 -- environment

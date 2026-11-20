@@ -24,6 +24,10 @@
     kernelParams = [ "resume_offset=13116672" ];
     kernelPackages = pkgs.linuxPackages_latest;
     resumeDevice = "/dev/disk/by-label/nixos";
+    initrd = {
+      availableKernelModules = [ "btrfs" ];
+      supportedFilesystems.btrfs = true;
+    };
   };
 
   # hibernate after 30m asleep in suspend-then-hibernate
@@ -71,6 +75,7 @@
     menulibre
     qFlipper
     gcolor3
+    dotnet-sdk_10
 
     # astra monitor
     pciutils
@@ -80,7 +85,6 @@
   ];
 
   programs = {
-    coolercontrol.enable = true;
     firefox.enable = true;
   };
 
@@ -92,22 +96,16 @@
 
     ollama = {
       enable = true;
-      loadModels = [
-        "deepseek-r1:8b"
-        "qwen2.5-coder:1.5b"
-      ];
+      # loadModels = [
+      #   "deepseek-r1:8b"
+      #   "qwen2.5-coder:1.5b"
+      # ];
     };
 
     tailscale.enable = true;
     openssh.enable = true;
 
     # hardware support
-    hardware = {
-      openrgb = {
-        enable = true;
-        package = pkgs.openrgb-with-all-plugins;
-      };
-    };
     ratbagd.enable = true;
 
     pipewire = {

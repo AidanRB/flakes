@@ -9,22 +9,18 @@ window#waybar>box {
   padding-right: 5px;
 }
 
-#workspaces button {
+#workspaces button,
+#workspaces button:hover {
   box-shadow: none;
-  padding: 2px 8px;
+  padding: 0 4px;
   margin: 0 4px 4px 4px;
   border-radius: 0 0 4px 4px;
-  transition: all 0s;
+  transition: all 0.1s;
   border: none;
 }
 
 #workspaces button:hover {
-  box-shadow: inherit;
-  text-shadow: inherit;
-  background: rgba(255, 255, 255, .1);
-  border: none;
-  padding: 2px 8px;
-  margin: 0 4px 4px 4px;
+  background: rgba(255, 255, 255, .15);
 }
 
 #workspaces button:hover>widget>box {
@@ -32,11 +28,23 @@ window#waybar>box {
 }
 
 #workspaces button.visible {
-  background: rgba(255, 255, 255, .1);
+  background: rgba(255, 255, 255, .15);
 }
 
 #workspaces .workspace-label {
   color: #ddd;
+  padding: 4px 8px;
+}
+
+#workspaces .taskbar-window,
+#workspaces .taskbar-window:hover {
+  transition: all 0.1s;
+  padding: 0px 5px;
+  margin: 0;
+}
+
+#workspaces .taskbar-window.active {
+  box-shadow: 0 2px 0 rgba(255, 255, 255, 0.8) inset;
 }
 
 #systemd-failed-units {

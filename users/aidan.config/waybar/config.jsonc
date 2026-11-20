@@ -27,16 +27,17 @@
     ],
     "hyprland/workspaces": {
         "format": "{name} {windows}",
-        "format-window-separator": " ",
-        "format-icons": {
-            "active": "",
-            "default": ""
-        },
+        // "format-window-separator": " ",
+        // "format-icons": {
+        //     "active": "",
+        //     "default": ""
+        // },
         "workspace-taskbar": {
             "enable": true,
             "update-active-window": true,
             "format": "{icon}",
-            "icon-size": 18
+            "icon-size": 18,
+            "on-click-window": "hyprctl dispatch 'hl.dsp.focus({window = \"address:{address}\"})'"
         }
     },
     "cpu": {
