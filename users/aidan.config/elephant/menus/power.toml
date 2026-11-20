@@ -7,26 +7,32 @@ text = "All Options"
 [entries.actions]
 "hibernate" = "hyprlock & sleep 2; systemctl hibernate"
 "lock" = "hyprlock"
-"poweroff" = "poweroff"
-"reboot" = "reboot"
-"suspend" = "hyprlock & sleep 2; systemctl suspend-then-hibernate"
+"poweroff" = "hyprshutdown --post-cmd poweroff --top-label 'Shutting down'"
+"reboot" = "hyprshutdown --post-cmd reboot --top-label 'Rebooting'"
+"suspend" = "hyprlock & sleep 2; systemctl suspend"
+
+[[entries]]
+text = "Log Off"
+keywords = ["log off", "logoff", "exit"]
+actions = { "logoff" = "hyprshutdown" }
+icon = "action-exit"
 
 [[entries]]
 text = "Sleep"
 keywords = ["sleep", "suspend"]
-actions = { "suspend" = "hyprlock & sleep 2; systemctl suspend-then-hibernate" }
+actions = { "suspend" = "hyprlock & sleep 2; systemctl suspend" }
 icon = "preferences-desktop-screensaver"
 
 [[entries]]
 text = "Power Off"
 keywords = ["poweroff", "shutdown"]
-actions = { "poweroff" = "poweroff" }
+actions = { "poweroff" = "hyprshutdown --post-cmd poweroff --top-label 'Shutting down'" }
 icon = "media-playback-stop"
 
 [[entries]]
 text = "Reboot"
 keywords = ["restart"]
-actions = { "reboot" = "reboot" }
+actions = { "reboot" = "hyprshutdown --post-cmd reboot --top-label 'Rebooting'" }
 icon = "system-reboot"
 
 [[entries]]

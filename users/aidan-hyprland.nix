@@ -1,4 +1,9 @@
-{ pkgs, inputs, lib, ... }:
+{
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
 
 {
   system.activationScripts.copyConfig = {
@@ -16,6 +21,7 @@
     playerctl
     hyprsunset
     hyprpaper
+    hyprshutdown
     gpu-screen-recorder
     walker
     elephant
