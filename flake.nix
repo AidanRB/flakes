@@ -20,6 +20,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    lumine-capture = {
+      url = "github:Netflate/LumineCapture";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -29,6 +33,7 @@
       home-manager,
       nix-index-database,
       copyparty,
+      lumine-capture,
       ...
     }@inputs:
     {

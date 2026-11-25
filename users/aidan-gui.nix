@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports = [
@@ -16,6 +16,7 @@
 
       speedcrunch
       flameshot
+      inputs.lumine-capture.packages.${pkgs.stdenv.hostPlatform.system}.default
       bitwarden-desktop
 
       dm-mono

@@ -302,7 +302,7 @@ hl.bind("SUPER + CTRL + m",
 hl.bind("SUPER + CTRL + y",
   hl.dsp.exec_cmd("brave --profile-directory=Default --app-id=agimnkijcaahngcdmfeangaknmldooml"))
 hl.bind("CTRL + ALT + DELETE", hl.dsp.exec_cmd("walker --provider menus power"))
-hl.bind("PRINT", hl.dsp.exec_cmd("XDG_CURRENT_DESKTOP=sway flameshot gui"))
+hl.bind("PRINT", hl.dsp.exec_cmd("lumine-capture --to copy --nonotify"))
 hl.bind("SUPER + PRINT", hl.dsp.exec_cmd("pkill -SIGUSR1 -f gpu-screen-recorder"))
 hl.bind("SUPER + f", hl.dsp.exec_cmd("nautilus"))
 hl.bind("XF86Calculator", hl.dsp.exec_cmd("speedcrunch"))
@@ -434,4 +434,12 @@ hl.layer_rule({
     namespace = "hyprpaper",
   },
   animation = "fade 1",
+})
+
+hl.layer_rule({
+  name = "screenshot tool",
+  match = {
+    namespace = "lumine-capture",
+  },
+  animation = "fade",
 })

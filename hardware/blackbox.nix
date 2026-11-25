@@ -110,7 +110,6 @@
 
     pipewire = {
       alsa.enable = true;
-      jack.enable = true;
     };
 
     # disable suspending after wakeOnLan while sitting on the login screen
